@@ -1,0 +1,6 @@
+@DotNet8.Architectures.NLayer.Presentation_HostAddress = http://localhost:5037
+
+GET {{DotNet8.Architectures.NLayer.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

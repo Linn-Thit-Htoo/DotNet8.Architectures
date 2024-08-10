@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35005.142
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NLayer", "NLayer", "{53385364-FA9E-4692-83E4-8ADDC4CDE3E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.NLayer.Presentation", "DotNet8.Architectures.NLayer.Presentation\DotNet8.Architectures.NLayer.Presentation.csproj", "{BF6A6CDD-89AA-4716-B8BE-59E9ADA937CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF6A6CDD-89AA-4716-B8BE-59E9ADA937CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6A6CDD-89AA-4716-B8BE-59E9ADA937CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6A6CDD-89AA-4716-B8BE-59E9ADA937CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6A6CDD-89AA-4716-B8BE-59E9ADA937CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF6A6CDD-89AA-4716-B8BE-59E9ADA937CC} = {53385364-FA9E-4692-83E4-8ADDC4CDE3E6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D2FCB14-F503-44A7-881A-010BFA6966E0}
+	EndGlobalSection
+EndGlobal
