@@ -30,5 +30,8 @@ namespace DotNet8.Architectures.Utils
 
         public static Result<T> Failure(Exception ex)
             => new() { Message = ex.ToString(), StatusCode = EnumStatusCode.InternalServerError, IsSuccess = false };
+
+        public static Result<T> NotFound(string message = "No Data Found.")
+            => Result<T>.Failure(message, EnumStatusCode.NotFound);
     }
 }
