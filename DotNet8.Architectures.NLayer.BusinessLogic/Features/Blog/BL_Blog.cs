@@ -14,7 +14,7 @@ public class BL_Blog
         _dA_Blog = dA_Blog;
     }
 
-    public async Task<Result<BlogListDto>> GetBlogs(int pageNo, int pageSize)
+    public async Task<Result<BlogListDto>> GetBlogsAsync(int pageNo, int pageSize)
     {
         Result<BlogListDto> result;
 
@@ -30,13 +30,13 @@ public class BL_Blog
             goto result;
         }
 
-        result = await _dA_Blog.GetBlogs(pageNo, pageSize);
+        result = await _dA_Blog.GetBlogsAsync(pageNo, pageSize);
 
     result:
         return result;
     }
 
-    public async Task<Result<BlogDto>> GetBlog(int id)
+    public async Task<Result<BlogDto>> GetBlogAsync(int id)
     {
         Result<BlogDto> result;
 
@@ -46,7 +46,7 @@ public class BL_Blog
             goto result;
         }
 
-        result = await _dA_Blog.GetBlog(id);
+        result = await _dA_Blog.GetBlogAsync(id);
 
     result:
         return result;

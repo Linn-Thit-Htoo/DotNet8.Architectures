@@ -16,7 +16,7 @@ public class DA_Blog
         _context = context;
     }
 
-    public async Task<Result<BlogListDto>> GetBlogs(int pageNo, int pageSize)
+    public async Task<Result<BlogListDto>> GetBlogsAsync(int pageNo, int pageSize)
     {
         Result<BlogListDto> result;
         try
@@ -49,7 +49,7 @@ public class DA_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> GetBlog(int id)
+    public async Task<Result<BlogDto>> GetBlogAsync(int id)
     {
         Result<BlogDto> result;
         try

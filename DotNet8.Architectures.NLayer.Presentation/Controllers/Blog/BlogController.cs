@@ -17,7 +17,7 @@ public class BlogController : BaseController
     [HttpGet]
     public async Task<IActionResult> GetBlogs(int pageNo, int pageSize)
     {
-        var result = await _bL_Blog.GetBlogs(pageNo, pageSize);
+        var result = await _bL_Blog.GetBlogsAsync(pageNo, pageSize);
         return Content(result);
     }
 }
