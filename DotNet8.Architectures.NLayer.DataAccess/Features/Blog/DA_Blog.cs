@@ -71,4 +71,22 @@ public class DA_Blog
     result:
         return result;
     }
+
+    public async Task<Result<BlogDto>> AddBlogAsync(CreateBlogDto blogDto)
+    {
+        Result<BlogDto> result;
+        try
+        {
+            await _context.Tbl_Blogs.AddAsync(blogDto.ToEntity());
+            await _context.SaveChangesAsync();
+
+            result = Result<BlogDto>.SaveSuccess();
+        }
+        catch (Exception ex)
+        {
+            result = Result<BlogDto>.Failure(ex);
+        }
+
+        return result;
+    }
 }

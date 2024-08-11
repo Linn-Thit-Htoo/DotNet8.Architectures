@@ -15,4 +15,14 @@ public static class Extension
             BlogContent = dataModel.BlogContent
         };
     }
+
+    public static Tbl_Blog ToEntity(this CreateBlogDto blogDto)
+    {
+        return new Tbl_Blog
+        {
+            BlogTitle = blogDto.BlogTitle,
+            BlogAuthor = blogDto.BlogAuthor,
+            BlogContent = blogDto.BlogContent
+        };
+    }
 }
