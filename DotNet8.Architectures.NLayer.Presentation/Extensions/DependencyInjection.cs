@@ -7,20 +7,31 @@ namespace DotNet8.Architectures.NLayer.Presentation.Extensions;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddDependencyInjection(this IServiceCollection services, WebApplicationBuilder builder)
+    public static IServiceCollection AddDependencyInjection(
+        this IServiceCollection services,
+        WebApplicationBuilder builder
+    )
     {
-        return services.AddDbContextService(builder)
+        return services
+            .AddDbContextService(builder)
             .AddDataAccessService()
             .AddBusinessLogicService();
     }
 
-    private static IServiceCollection AddDbContextService(this IServiceCollection services, WebApplicationBuilder builder)
+    private static IServiceCollection AddDbContextService(
+        this IServiceCollection services,
+        WebApplicationBuilder builder
+    )
     {
-        builder.Services.AddDbContext<AppDbContext>(opt =>
-        {
-            opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-            opt.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
-        }, ServiceLifetime.Transient, ServiceLifetime.Transient);
+        builder.Services.AddDbContext<AppDbContext>(
+            opt =>
+            {
+                opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                opt.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
+            },
+            ServiceLifetime.Transient,
+            ServiceLifetime.Transient
+        );
 
         return services;
     }
