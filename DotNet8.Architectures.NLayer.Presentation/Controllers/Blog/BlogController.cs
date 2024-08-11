@@ -20,4 +20,11 @@ public class BlogController : BaseController
         var result = await _bL_Blog.GetBlogsAsync(pageNo, pageSize);
         return Content(result);
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetBlog(int id)
+    {
+        var result = await _bL_Blog.GetBlogAsync(id);
+        return Content(result);
+    }
 }
