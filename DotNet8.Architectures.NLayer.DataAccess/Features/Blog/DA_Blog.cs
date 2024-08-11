@@ -26,9 +26,8 @@ namespace DotNet8.Architectures.NLayer.DataAccess.Features.Blog
             Result<BlogListDto> result;
             try
             {
-                var query = _context.Tbl_Blogs.OrderByDescending(x => x.BlogId)
-                    .Skip((pageNo - 1) * pageSize).Take(pageSize);
-                var lst = await query.ToListAsync();
+                var query = _context.Tbl_Blogs.OrderByDescending(x => x.BlogId);
+                var lst = await query.Skip((pageNo - 1) * pageSize).Take(pageSize).ToListAsync();
 
                 var totalCount = await query.CountAsync();
                 var pageCount = totalCount / pageSize;
@@ -39,7 +38,7 @@ namespace DotNet8.Architectures.NLayer.DataAccess.Features.Blog
                 }
 
                 var pageSettingModel = new PageSettingModel(pageNo, pageSize, pageCount, totalCount);
-                result = Result<BlogListDto>.Success(new BlogListDto { DataLst = lst.Select(x => x.ToDto()), PageSetting = pageSettingModel});
+                result = Result<BlogListDto>.Success(new BlogListDto { DataLst = lst.Select(x => x.ToDto()), PageSetting = pageSettingModel });
             }
             catch (Exception ex)
             {
