@@ -4,11 +4,6 @@ using DotNet8.Architectures.DTOs.Features.PageSetting;
 using DotNet8.Architectures.Extensions;
 using DotNet8.Architectures.Utils;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DotNet8.Architectures.NLayer.DataAccess.Features.Blog
 {
