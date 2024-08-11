@@ -2,11 +2,6 @@
 using DotNet8.Architectures.NLayer.DataAccess.Features.Blog;
 using DotNet8.Architectures.Utils;
 using DotNet8.Architectures.Utils.Resources;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DotNet8.Architectures.NLayer.BusinessLogic.Features.Blog
 {
