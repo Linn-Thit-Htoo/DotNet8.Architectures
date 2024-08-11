@@ -33,7 +33,13 @@ public class DA_Blog
             }
 
             var pageSettingModel = new PageSettingModel(pageNo, pageSize, pageCount, totalCount);
-            result = Result<BlogListDto>.Success(new BlogListDto { DataLst = lst.Select(x => x.ToDto()), PageSetting = pageSettingModel });
+            result = Result<BlogListDto>.Success(
+                new BlogListDto
+                {
+                    DataLst = lst.Select(x => x.ToDto()),
+                    PageSetting = pageSettingModel
+                }
+            );
         }
         catch (Exception ex)
         {
