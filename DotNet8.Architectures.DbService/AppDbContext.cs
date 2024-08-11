@@ -1,14 +1,12 @@
 ﻿using DotNet8.Architectures.DbService.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotNet8.Architectures.DbService
-{
-    public class AppDbContext : DbContext
-    {
-        public AppDbContext(DbContextOptions options) : base(options)
-        {
-        }
+namespace DotNet8.Architectures.DbService;
 
-        public DbSet<Tbl_Blog> Tbl_Blogs { get; set; }
-    }
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions options)
+        : base(options) { }
+
+    public DbSet<Tbl_Blog> Tbl_Blogs { get; set; }
 }
