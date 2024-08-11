@@ -12,4 +12,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DotNet8.Architectures.NLayer.BusinessLogic\DotNet8.Architectures.NLayer.BusinessLogic.csproj" />
+    <ProjectReference Include="..\DotNet8.Architectures.Shared\DotNet8.Architectures.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
