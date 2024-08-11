@@ -32,7 +32,7 @@ public class BL_Blog
 
         result = await _dA_Blog.GetBlogs(pageNo, pageSize);
 
-        result:
+    result:
         return result;
     }
 }
