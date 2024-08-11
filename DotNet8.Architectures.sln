@@ -5,21 +5,23 @@ VisualStudioVersion = 17.11.35005.142
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NLayer", "NLayer", "{53385364-FA9E-4692-83E4-8ADDC4CDE3E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.NLayer.Presentation", "DotNet8.Architectures.NLayer.Presentation\DotNet8.Architectures.NLayer.Presentation.csproj", "{BF6A6CDD-89AA-4716-B8BE-59E9ADA937CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.NLayer.Presentation", "DotNet8.Architectures.NLayer.Presentation\DotNet8.Architectures.NLayer.Presentation.csproj", "{BF6A6CDD-89AA-4716-B8BE-59E9ADA937CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.NLayer.BusinessLogic", "DotNet8.Architectures.NLayer.BusinessLogic\DotNet8.Architectures.NLayer.BusinessLogic.csproj", "{5F21F580-5CEB-4785-A673-3797B7871E17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.NLayer.BusinessLogic", "DotNet8.Architectures.NLayer.BusinessLogic\DotNet8.Architectures.NLayer.BusinessLogic.csproj", "{5F21F580-5CEB-4785-A673-3797B7871E17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.NLayer.DataAccess", "DotNet8.Architectures.NLayer.DataAccess\DotNet8.Architectures.NLayer.DataAccess.csproj", "{F3177D77-26D3-4A03-BBE5-392A762FBE97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.NLayer.DataAccess", "DotNet8.Architectures.NLayer.DataAccess\DotNet8.Architectures.NLayer.DataAccess.csproj", "{F3177D77-26D3-4A03-BBE5-392A762FBE97}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{904AA748-3893-4AF4-AE89-B73B0D4546EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.DbService", "DotNet8.Architectures.DbService\DotNet8.Architectures.DbService.csproj", "{07431C18-CD82-41D2-83F4-C907888883C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.DbService", "DotNet8.Architectures.DbService\DotNet8.Architectures.DbService.csproj", "{07431C18-CD82-41D2-83F4-C907888883C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Shared", "DotNet8.Architectures.Shared\DotNet8.Architectures.Shared.csproj", "{EAEE1DE5-81BA-4F43-969C-284B720CC695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.Shared", "DotNet8.Architectures.Shared\DotNet8.Architectures.Shared.csproj", "{EAEE1DE5-81BA-4F43-969C-284B720CC695}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.DTOs", "DotNet8.Architectures.DTOs\DotNet8.Architectures.DTOs.csproj", "{9344266A-BDBD-4F50-89D1-C64CF946E823}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.DTOs", "DotNet8.Architectures.DTOs\DotNet8.Architectures.DTOs.csproj", "{9344266A-BDBD-4F50-89D1-C64CF946E823}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Utils", "DotNet8.Architectures.Utils\DotNet8.Architectures.Utils.csproj", "{E84133CA-0B6F-4584-8251-83ED9DA7F8BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.Utils", "DotNet8.Architectures.Utils\DotNet8.Architectures.Utils.csproj", "{E84133CA-0B6F-4584-8251-83ED9DA7F8BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Extensions", "DotNet8.Architectures.Extensions\DotNet8.Architectures.Extensions.csproj", "{ACCD42A3-54C9-45FF-A0C9-DE2E362FFF68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{E84133CA-0B6F-4584-8251-83ED9DA7F8BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E84133CA-0B6F-4584-8251-83ED9DA7F8BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E84133CA-0B6F-4584-8251-83ED9DA7F8BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACCD42A3-54C9-45FF-A0C9-DE2E362FFF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACCD42A3-54C9-45FF-A0C9-DE2E362FFF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACCD42A3-54C9-45FF-A0C9-DE2E362FFF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACCD42A3-54C9-45FF-A0C9-DE2E362FFF68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{EAEE1DE5-81BA-4F43-969C-284B720CC695} = {904AA748-3893-4AF4-AE89-B73B0D4546EA}
 		{9344266A-BDBD-4F50-89D1-C64CF946E823} = {904AA748-3893-4AF4-AE89-B73B0D4546EA}
 		{E84133CA-0B6F-4584-8251-83ED9DA7F8BC} = {904AA748-3893-4AF4-AE89-B73B0D4546EA}
+		{ACCD42A3-54C9-45FF-A0C9-DE2E362FFF68} = {904AA748-3893-4AF4-AE89-B73B0D4546EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D2FCB14-F503-44A7-881A-010BFA6966E0}

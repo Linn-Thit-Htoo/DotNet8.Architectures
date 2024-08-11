@@ -7,15 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DotNet8.Architectures.DbService\DotNet8.Architectures.DbService.csproj" />
     <ProjectReference Include="..\DotNet8.Architectures.DTOs\DotNet8.Architectures.DTOs.csproj" />
-    <ProjectReference Include="..\DotNet8.Architectures.Extensions\DotNet8.Architectures.Extensions.csproj" />
-    <ProjectReference Include="..\DotNet8.Architectures.Shared\DotNet8.Architectures.Shared.csproj" />
-    <ProjectReference Include="..\DotNet8.Architectures.Utils\DotNet8.Architectures.Utils.csproj" />
   </ItemGroup>
 
 </Project>
