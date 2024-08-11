@@ -48,4 +48,27 @@ public class DA_Blog
 
         return result;
     }
+
+    public async Task<Result<BlogDto>> GetBlog(int id)
+    {
+        Result<BlogDto> result;
+        try
+        {
+            var blog = await _context.Tbl_Blogs.FindAsync(id);
+            if (blog is null)
+            {
+                result = Result<BlogDto>.NotFound("Blog Not Found.");
+                goto result;
+            }
+
+            result = Result<BlogDto>.Success(blog.ToDto());
+        }
+        catch (Exception ex)
+        {
+            result = Result<BlogDto>.Failure(ex);
+        }
+
+    result:
+        return result;
+    }
 }
