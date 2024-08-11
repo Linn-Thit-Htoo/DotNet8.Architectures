@@ -35,4 +35,20 @@ public class BL_Blog
     result:
         return result;
     }
+
+    public async Task<Result<BlogDto>> GetBlog(int id)
+    {
+        Result<BlogDto> result;
+
+        if (id <= 0)
+        {
+            result = Result<BlogDto>.Failure(MessageResource.InvalidId);
+            goto result;
+        }
+
+        result = await _dA_Blog.GetBlog(id);
+
+    result:
+        return result;
+    }
 }
