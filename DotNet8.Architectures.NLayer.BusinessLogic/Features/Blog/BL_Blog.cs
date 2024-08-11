@@ -51,4 +51,9 @@ public class BL_Blog
     result:
         return result;
     }
+
+    public async Task<Result<BlogDto>> AddBlogAsync(CreateBlogDto blogDto)
+    {
+        return await _dA_Blog.AddBlogAsync(blogDto);
+    }
 }

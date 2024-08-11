@@ -1,4 +1,5 @@
-﻿using DotNet8.Architectures.NLayer.BusinessLogic.Features.Blog;
+﻿using DotNet8.Architectures.DTOs.Features.Blog;
+using DotNet8.Architectures.NLayer.BusinessLogic.Features.Blog;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNet8.Architectures.NLayer.Presentation.Controllers.Blog;
@@ -25,6 +26,13 @@ public class BlogController : BaseController
     public async Task<IActionResult> GetBlog(int id)
     {
         var result = await _bL_Blog.GetBlogAsync(id);
+        return Content(result);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateBlog([FromBody] CreateBlogDto blogDto)
+    {
+        var result = await _bL_Blog.AddBlogAsync(blogDto);
         return Content(result);
     }
 }
