@@ -12,7 +12,11 @@ public class BlogController : BaseController
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetBlogs(int pageNo, int pageSize, CancellationToken cancellationToken)
+    public async Task<IActionResult> GetBlogs(
+        int pageNo,
+        int pageSize,
+        CancellationToken cancellationToken
+    )
     {
         var result = await _bL_Blog.GetBlogsAsync(pageNo, pageSize, cancellationToken);
         return Content(result);
@@ -26,14 +30,21 @@ public class BlogController : BaseController
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateBlog([FromBody] BlogRequestDto blogDto, CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateBlog(
+        [FromBody] BlogRequestDto blogDto,
+        CancellationToken cancellationToken
+    )
     {
         var result = await _bL_Blog.AddBlogAsync(blogDto, cancellationToken);
         return Content(result);
     }
 
     [HttpPut]
-    public async Task<IActionResult> UpdateBlog([FromBody] BlogRequestDto blogRequest, int id, CancellationToken cancellationToken)
+    public async Task<IActionResult> UpdateBlog(
+        [FromBody] BlogRequestDto blogRequest,
+        int id,
+        CancellationToken cancellationToken
+    )
     {
         var result = await _bL_Blog.UpdateBlogAsync(blogRequest, id, cancellationToken);
         return Content(result);
