@@ -1,6 +1,4 @@
-﻿using DotNet8.Architectures.Shared;
-
-namespace DotNet8.Architectures.NLayer.Presentation.Controllers;
+﻿namespace DotNet8.Architectures.NLayer.Presentation.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

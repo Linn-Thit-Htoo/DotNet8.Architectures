@@ -1,6 +1,5 @@
 ﻿using DotNet8.Architectures.DbService;
 using DotNet8.Architectures.NLayer.DataAccess.Features.Blog;
-using DotNet8.Architectures.Shared;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
