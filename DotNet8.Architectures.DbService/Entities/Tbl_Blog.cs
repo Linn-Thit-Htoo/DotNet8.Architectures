@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace DotNet8.Architectures.DbService.Entities;
+﻿namespace DotNet8.Architectures.DbService.Entities;
 
 [Table("Tbl_Blog")]
 public class Tbl_Blog
