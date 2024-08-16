@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Runtime.CompilerServices;
-
-namespace DotNet8.Architectures.Shared;
+﻿namespace DotNet8.Architectures.Shared;
 
 public static class DevCode
 {
