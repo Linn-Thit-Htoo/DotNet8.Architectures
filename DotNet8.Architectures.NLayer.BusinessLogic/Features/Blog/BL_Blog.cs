@@ -72,4 +72,28 @@ public class BL_Blog
     result:
         return result;
     }
+
+    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogDto, int id)
+    {
+        Result<BlogDto> result;
+
+        var validationResult = await _blogValidator.ValidateAsync(blogDto);
+        if (!validationResult.IsValid)
+        {
+            string errors = string.Join(" ", validationResult.Errors.Select(x => x.ErrorMessage));
+            result = Result<BlogDto>.Failure(errors);
+            goto result;
+        }
+
+        if (id <= 0)
+        {
+            result = Result<BlogDto>.Failure(MessageResource.InvalidId);
+            goto result;
+        }
+
+        result = await _dA_Blog.UpdateBlogAsync(blogDto, id);
+
+    result:
+        return result;
+    }
 }
