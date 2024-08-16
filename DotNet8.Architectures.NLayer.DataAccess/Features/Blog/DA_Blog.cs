@@ -119,4 +119,30 @@ public class DA_Blog
     result:
         return result;
     }
+
+    public async Task<Result<BlogDto>> DeleteBlogAsync(int id)
+    {
+        Result<BlogDto> result;
+        try
+        {
+            var blog = await _context.Tbl_Blogs.FirstOrDefaultAsync(x => x.BlogId == id);
+            if (blog is null)
+            {
+                result = Result<BlogDto>.NotFound();
+                goto result;
+            }
+
+            _context.Tbl_Blogs.Remove(blog);
+            await _context.SaveChangesAsync();
+
+            result = Result<BlogDto>.DeleteSuccess();
+        }
+        catch (Exception ex)
+        {
+            result = Result<BlogDto>.Failure(ex);
+        }
+
+    result:
+        return result;
+    }
 }
