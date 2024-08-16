@@ -11,7 +11,11 @@ public class BL_Blog
         _blogValidator = blogValidator;
     }
 
-    public async Task<Result<BlogListDto>> GetBlogsAsync(int pageNo, int pageSize, CancellationToken cancellationToken)
+    public async Task<Result<BlogListDto>> GetBlogsAsync(
+        int pageNo,
+        int pageSize,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogListDto> result;
 
@@ -49,7 +53,10 @@ public class BL_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogRequest, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> AddBlogAsync(
+        BlogRequestDto blogRequest,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
 
@@ -67,7 +74,11 @@ public class BL_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogRequest, int id, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> UpdateBlogAsync(
+        BlogRequestDto blogRequest,
+        int id,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
 
