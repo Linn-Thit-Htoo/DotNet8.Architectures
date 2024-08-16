@@ -1,8 +1,4 @@
-﻿using DotNet8.Architectures.DTOs.Features.Blog;
-using DotNet8.Architectures.NLayer.BusinessLogic.Features.Blog;
-using Microsoft.AspNetCore.Mvc;
-
-namespace DotNet8.Architectures.NLayer.Presentation.Controllers.Blog;
+﻿namespace DotNet8.Architectures.NLayer.Presentation.Controllers.Blog;
 
 [Route("api/[controller]")]
 [ApiController]
