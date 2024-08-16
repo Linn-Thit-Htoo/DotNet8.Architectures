@@ -1,6 +1,4 @@
-﻿using DotNet8.Architectures.DTOs.Features.PageSetting;
-
-namespace DotNet8.Architectures.DTOs.Features.Blog;
+﻿namespace DotNet8.Architectures.DTOs.Features.Blog;
 
 public class BlogListDto
 {
