@@ -1,7 +1,4 @@
-﻿using DotNet8.Architectures.DbService.Entities;
-using Microsoft.EntityFrameworkCore;
-
-namespace DotNet8.Architectures.DbService;
+﻿namespace DotNet8.Architectures.DbService;
 
 public class AppDbContext : DbContext
 {
