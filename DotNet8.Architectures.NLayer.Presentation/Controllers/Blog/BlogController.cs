@@ -30,7 +30,7 @@ public class BlogController : BaseController
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateBlog([FromBody] CreateBlogDto blogDto)
+    public async Task<IActionResult> CreateBlog([FromBody] BlogRequestDto blogDto)
     {
         var result = await _bL_Blog.AddBlogAsync(blogDto);
         return Content(result);

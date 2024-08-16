@@ -16,7 +16,7 @@ public static class Extension
         };
     }
 
-    public static Tbl_Blog ToEntity(this CreateBlogDto blogDto)
+    public static Tbl_Blog ToEntity(this BlogRequestDto blogDto)
     {
         return new Tbl_Blog
         {

@@ -72,7 +72,7 @@ public class DA_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> AddBlogAsync(CreateBlogDto blogDto)
+    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogDto)
     {
         Result<BlogDto> result;
         try
@@ -87,6 +87,36 @@ public class DA_Blog
             result = Result<BlogDto>.Failure(ex);
         }
 
+        return result;
+    }
+
+    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogDto, int id)
+    {
+        Result<BlogDto> result;
+        try
+        {
+            var blog = await _context.Tbl_Blogs.FirstOrDefaultAsync(x => x.BlogId == id);
+            if (blog is null)
+            {
+                result = Result<BlogDto>.NotFound();
+                goto result;
+            }
+
+            blog.BlogTitle = blogDto.BlogTitle;
+            blog.BlogAuthor = blogDto.BlogAuthor;
+            blog.BlogContent = blogDto.BlogContent;
+
+            _context.Tbl_Blogs.Update(blog);
+            await _context.SaveChangesAsync();
+
+            result = Result<BlogDto>.UpdateSuccess();
+        }
+        catch (Exception ex)
+        {
+            result = Result<BlogDto>.Failure(ex);
+        }
+
+    result:
         return result;
     }
 }
