@@ -16,15 +16,15 @@ public class DA_Blog
         _context = context;
     }
 
-    public async Task<Result<BlogListDto>> GetBlogsAsync(int pageNo, int pageSize)
+    public async Task<Result<BlogListDto>> GetBlogsAsync(int pageNo, int pageSize, CancellationToken cancellationToken)
     {
         Result<BlogListDto> result;
         try
         {
             var query = _context.Tbl_Blogs.OrderByDescending(x => x.BlogId);
-            var lst = await query.Skip((pageNo - 1) * pageSize).Take(pageSize).ToListAsync();
+            var lst = await query.Skip((pageNo - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
 
-            var totalCount = await query.CountAsync();
+            var totalCount = await query.CountAsync(cancellationToken);
             var pageCount = totalCount / pageSize;
 
             if (totalCount % pageSize > 0)
@@ -49,12 +49,12 @@ public class DA_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> GetBlogAsync(int id)
+    public async Task<Result<BlogDto>> GetBlogAsync(int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
         try
         {
-            var blog = await _context.Tbl_Blogs.FindAsync(id);
+            var blog = await _context.Tbl_Blogs.FindAsync([id], cancellationToken: cancellationToken);
             if (blog is null)
             {
                 result = Result<BlogDto>.NotFound("Blog Not Found.");
@@ -72,13 +72,13 @@ public class DA_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogDto)
+    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogDto, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
         try
         {
-            await _context.Tbl_Blogs.AddAsync(blogDto.ToEntity());
-            await _context.SaveChangesAsync();
+            await _context.Tbl_Blogs.AddAsync(blogDto.ToEntity(), cancellationToken);
+            await _context.SaveChangesAsync(cancellationToken);
 
             result = Result<BlogDto>.SaveSuccess();
         }
@@ -90,12 +90,12 @@ public class DA_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogDto, int id)
+    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogDto, int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
         try
         {
-            var blog = await _context.Tbl_Blogs.FirstOrDefaultAsync(x => x.BlogId == id);
+            var blog = await _context.Tbl_Blogs.FirstOrDefaultAsync(x => x.BlogId == id, cancellationToken: cancellationToken);
             if (blog is null)
             {
                 result = Result<BlogDto>.NotFound();
@@ -107,7 +107,7 @@ public class DA_Blog
             blog.BlogContent = blogDto.BlogContent;
 
             _context.Tbl_Blogs.Update(blog);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
 
             result = Result<BlogDto>.UpdateSuccess();
         }
@@ -120,12 +120,12 @@ public class DA_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> DeleteBlogAsync(int id)
+    public async Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
         try
         {
-            var blog = await _context.Tbl_Blogs.FirstOrDefaultAsync(x => x.BlogId == id);
+            var blog = await _context.Tbl_Blogs.FirstOrDefaultAsync(x => x.BlogId == id, cancellationToken: cancellationToken);
             if (blog is null)
             {
                 result = Result<BlogDto>.NotFound();
@@ -133,7 +133,7 @@ public class DA_Blog
             }
 
             _context.Tbl_Blogs.Remove(blog);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
 
             result = Result<BlogDto>.DeleteSuccess();
         }

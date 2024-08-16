@@ -17,7 +17,7 @@ public class BL_Blog
         _blogValidator = blogValidator;
     }
 
-    public async Task<Result<BlogListDto>> GetBlogsAsync(int pageNo, int pageSize)
+    public async Task<Result<BlogListDto>> GetBlogsAsync(int pageNo, int pageSize, CancellationToken cancellationToken)
     {
         Result<BlogListDto> result;
 
@@ -33,13 +33,13 @@ public class BL_Blog
             goto result;
         }
 
-        result = await _dA_Blog.GetBlogsAsync(pageNo, pageSize);
+        result = await _dA_Blog.GetBlogsAsync(pageNo, pageSize, cancellationToken);
 
     result:
         return result;
     }
 
-    public async Task<Result<BlogDto>> GetBlogAsync(int id)
+    public async Task<Result<BlogDto>> GetBlogAsync(int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
 
@@ -49,13 +49,13 @@ public class BL_Blog
             goto result;
         }
 
-        result = await _dA_Blog.GetBlogAsync(id);
+        result = await _dA_Blog.GetBlogAsync(id, cancellationToken);
 
     result:
         return result;
     }
 
-    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogDto)
+    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogDto, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
 
@@ -67,13 +67,13 @@ public class BL_Blog
             goto result;
         }
 
-        result = await _dA_Blog.AddBlogAsync(blogDto);
+        result = await _dA_Blog.AddBlogAsync(blogDto, cancellationToken);
 
     result:
         return result;
     }
 
-    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogDto, int id)
+    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogDto, int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
 
@@ -91,7 +91,7 @@ public class BL_Blog
             goto result;
         }
 
-        result = await _dA_Blog.UpdateBlogAsync(blogDto, id);
+        result = await _dA_Blog.UpdateBlogAsync(blogDto, id, cancellationToken);
 
     result:
         return result;
