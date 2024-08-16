@@ -1,7 +1,4 @@
-﻿using DotNet8.Architectures.DbService.Entities;
-using DotNet8.Architectures.DTOs.Features.Blog;
-
-namespace DotNet8.Architectures.Extensions;
+﻿namespace DotNet8.Architectures.Extensions;
 
 public static class Extension
 {
