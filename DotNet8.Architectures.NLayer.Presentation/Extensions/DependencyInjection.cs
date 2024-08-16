@@ -1,9 +1,4 @@
-﻿using DotNet8.Architectures.DbService;
-using DotNet8.Architectures.NLayer.DataAccess.Features.Blog;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace DotNet8.Architectures.NLayer.Presentation.Extensions;
+﻿namespace DotNet8.Architectures.NLayer.Presentation.Extensions;
 
 public static class DependencyInjection
 {
