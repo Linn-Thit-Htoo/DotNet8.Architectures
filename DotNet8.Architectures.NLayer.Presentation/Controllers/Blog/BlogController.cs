@@ -1,6 +1,7 @@
 ﻿using DotNet8.Architectures.DTOs.Features.Blog;
 using DotNet8.Architectures.NLayer.BusinessLogic.Features.Blog;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Writers;
 
 namespace DotNet8.Architectures.NLayer.Presentation.Controllers.Blog;
 
@@ -33,6 +34,13 @@ public class BlogController : BaseController
     public async Task<IActionResult> CreateBlog([FromBody] BlogRequestDto blogDto, CancellationToken cancellationToken)
     {
         var result = await _bL_Blog.AddBlogAsync(blogDto, cancellationToken);
+        return Content(result);
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> UpdateBlog([FromBody] BlogRequestDto blogRequest, int id, CancellationToken cancellationToken)
+    {
+        var result = await _bL_Blog.UpdateBlogAsync(blogRequest, id, cancellationToken);
         return Content(result);
     }
 }

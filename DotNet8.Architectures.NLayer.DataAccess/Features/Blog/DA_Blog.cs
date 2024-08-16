@@ -72,12 +72,12 @@ public class DA_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogDto, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogRequest, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
         try
         {
-            await _context.Tbl_Blogs.AddAsync(blogDto.ToEntity(), cancellationToken);
+            await _context.Tbl_Blogs.AddAsync(blogRequest.ToEntity(), cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
 
             result = Result<BlogDto>.SaveSuccess();
@@ -90,7 +90,7 @@ public class DA_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogDto, int id, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogRequest, int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
         try
@@ -102,9 +102,9 @@ public class DA_Blog
                 goto result;
             }
 
-            blog.BlogTitle = blogDto.BlogTitle;
-            blog.BlogAuthor = blogDto.BlogAuthor;
-            blog.BlogContent = blogDto.BlogContent;
+            blog.BlogTitle = blogRequest.BlogTitle;
+            blog.BlogAuthor = blogRequest.BlogAuthor;
+            blog.BlogContent = blogRequest.BlogContent;
 
             _context.Tbl_Blogs.Update(blog);
             await _context.SaveChangesAsync(cancellationToken);

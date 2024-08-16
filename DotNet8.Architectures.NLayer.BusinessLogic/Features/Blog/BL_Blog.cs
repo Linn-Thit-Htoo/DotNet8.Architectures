@@ -55,11 +55,11 @@ public class BL_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogDto, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogRequest, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
 
-        var validationResult = await _blogValidator.ValidateAsync(blogDto);
+        var validationResult = await _blogValidator.ValidateAsync(blogRequest);
         if (!validationResult.IsValid)
         {
             string errors = string.Join(" ", validationResult.Errors.Select(x => x.ErrorMessage));
@@ -67,17 +67,17 @@ public class BL_Blog
             goto result;
         }
 
-        result = await _dA_Blog.AddBlogAsync(blogDto, cancellationToken);
+        result = await _dA_Blog.AddBlogAsync(blogRequest, cancellationToken);
 
     result:
         return result;
     }
 
-    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogDto, int id, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto blogRequest, int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
 
-        var validationResult = await _blogValidator.ValidateAsync(blogDto);
+        var validationResult = await _blogValidator.ValidateAsync(blogRequest);
         if (!validationResult.IsValid)
         {
             string errors = string.Join(" ", validationResult.Errors.Select(x => x.ErrorMessage));
@@ -91,7 +91,7 @@ public class BL_Blog
             goto result;
         }
 
-        result = await _dA_Blog.UpdateBlogAsync(blogDto, id, cancellationToken);
+        result = await _dA_Blog.UpdateBlogAsync(blogRequest, id, cancellationToken);
 
     result:
         return result;
