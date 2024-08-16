@@ -1,7 +1,9 @@
 ﻿using DotNet8.Architectures.DbService;
 using DotNet8.Architectures.NLayer.BusinessLogic.Features.Blog;
 using DotNet8.Architectures.NLayer.DataAccess.Features.Blog;
+using DotNet8.Architectures.Shared;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DotNet8.Architectures.NLayer.Presentation.Extensions;
 
@@ -15,7 +17,8 @@ public static class DependencyInjection
         return services
             .AddDbContextService(builder)
             .AddDataAccessService()
-            .AddBusinessLogicService();
+            .AddBusinessLogicService()
+            .AddValidatorService();
     }
 
     private static IServiceCollection AddDbContextService(
@@ -44,5 +47,10 @@ public static class DependencyInjection
     private static IServiceCollection AddBusinessLogicService(this IServiceCollection services)
     {
         return services.AddScoped<BL_Blog>();
+    }
+
+    private static IServiceCollection AddValidatorService(this IServiceCollection services)
+    {
+        return services.AddScoped<BlogValidator>();
     }
 }
