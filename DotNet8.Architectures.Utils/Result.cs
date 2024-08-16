@@ -1,6 +1,4 @@
-﻿using DotNet8.Architectures.Utils.Enums;
-
-namespace DotNet8.Architectures.Utils;
+﻿namespace DotNet8.Architectures.Utils;
 
 public class Result<T>
 {
