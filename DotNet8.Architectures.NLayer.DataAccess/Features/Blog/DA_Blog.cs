@@ -1,11 +1,4 @@
-﻿using DotNet8.Architectures.DbService;
-using DotNet8.Architectures.DTOs.Features.Blog;
-using DotNet8.Architectures.DTOs.Features.PageSetting;
-using DotNet8.Architectures.Extensions;
-using DotNet8.Architectures.Utils;
-using Microsoft.EntityFrameworkCore;
-
-namespace DotNet8.Architectures.NLayer.DataAccess.Features.Blog;
+﻿namespace DotNet8.Architectures.NLayer.DataAccess.Features.Blog;
 
 public class DA_Blog
 {
