@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
@@ -14,6 +15,7 @@
     <ProjectReference Include="..\DotNet8.Architectures.Clean.Application\DotNet8.Architectures.Clean.Application.csproj" />
     <ProjectReference Include="..\DotNet8.Architectures.Clean.Domain\DotNet8.Architectures.Clean.Domain.csproj" />
     <ProjectReference Include="..\DotNet8.Architectures.DTOs\DotNet8.Architectures.DTOs.csproj" />
+    <ProjectReference Include="..\DotNet8.Architectures.Shared\DotNet8.Architectures.Shared.csproj" />
   </ItemGroup>
 
 </Project>
