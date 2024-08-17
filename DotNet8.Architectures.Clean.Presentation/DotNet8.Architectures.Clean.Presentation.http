@@ -1,0 +1,6 @@
+@DotNet8.Architectures.Clean.Presentation_HostAddress = http://localhost:5230
+
+GET {{DotNet8.Architectures.Clean.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
