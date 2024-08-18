@@ -3,12 +3,8 @@ using DotNet8.Architectures.DTOs.Features.Blog;
 using DotNet8.Architectures.DTOs.Features.PageSetting;
 using DotNet8.Architectures.Shared;
 using DotNet8.Architectures.Utils;
+using MethodTimer;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DotNet8.Architectures.Clean.Infrastructure.Blog
 {
@@ -58,6 +54,7 @@ namespace DotNet8.Architectures.Clean.Infrastructure.Blog
             return result;
         }
 
+        [Time]
         public async Task<Result<BlogDto>> GetBlogByIdAsync(int id, CancellationToken cancellationToken)
         {
             Result<BlogDto> result;
