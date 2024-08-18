@@ -15,7 +15,10 @@ public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, Result<
         _blogRepository = blogRepository;
     }
 
-    public async Task<Result<BlogDto>> Handle(GetBlogByIdQuery request, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> Handle(
+        GetBlogByIdQuery request,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
 
@@ -27,7 +30,7 @@ public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, Result<
 
         result = await _blogRepository.GetBlogByIdAsync(request.BlogId, cancellationToken);
 
-    result:
+        result:
         return result;
     }
 }
