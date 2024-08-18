@@ -31,6 +31,7 @@ namespace DotNet8.Architectures.Clean.Presentation.Controllers.Blog
         {
             var query = new GetBlogByIdQuery(id);
             var result = await _mediator.Send(query);
+
             return Content(result);
         }
     }
