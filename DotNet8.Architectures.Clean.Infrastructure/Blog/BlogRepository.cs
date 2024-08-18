@@ -17,13 +17,19 @@ public class BlogRepository : IBlogRepository
         _context = context;
     }
 
-    public async Task<Result<BlogListDtoV1>> GetBlogsAsync(int pageNo, int pageSize, CancellationToken cancellationToken)
+    public async Task<Result<BlogListDtoV1>> GetBlogsAsync(
+        int pageNo,
+        int pageSize,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogListDtoV1> result;
         try
         {
             var query = _context.Tbl_Blogs.OrderByDescending(x => x.BlogId);
-            var lst = await query.Paginate(pageNo, pageSize).ToListAsync(cancellationToken: cancellationToken);
+            var lst = await query
+                .Paginate(pageNo, pageSize)
+                .ToListAsync(cancellationToken: cancellationToken);
             var totalCount = await query.CountAsync(cancellationToken: cancellationToken);
             var pageCount = totalCount / pageSize;
             if (totalCount % pageSize > 0)
@@ -35,12 +41,13 @@ public class BlogRepository : IBlogRepository
             var model = new BlogListDtoV1()
             {
                 DataLst = lst.Select(x => new BlogDto()
-                {
-                    BlogId = x.BlogId,
-                    BlogTitle = x.BlogTitle,
-                    BlogAuthor = x.BlogAuthor,
-                    BlogContent = x.BlogContent
-                }).AsQueryable(),
+                    {
+                        BlogId = x.BlogId,
+                        BlogTitle = x.BlogTitle,
+                        BlogAuthor = x.BlogAuthor,
+                        BlogContent = x.BlogContent
+                    })
+                    .AsQueryable(),
                 PageSetting = pageSettingModel
             };
 
@@ -60,31 +67,39 @@ public class BlogRepository : IBlogRepository
         Result<BlogDto> result;
         try
         {
-            var blog = await _context.Tbl_Blogs.FindAsync([id, cancellationToken], cancellationToken: cancellationToken);
+            var blog = await _context.Tbl_Blogs.FindAsync(
+                [id, cancellationToken],
+                cancellationToken: cancellationToken
+            );
             if (blog is null)
             {
                 result = Result<BlogDto>.NotFound();
                 goto result;
             }
 
-            result = Result<BlogDto>.Success(new BlogDto()
-            {
-                BlogId = blog.BlogId,
-                BlogTitle = blog.BlogTitle,
-                BlogAuthor = blog.BlogAuthor,
-                BlogContent = blog.BlogContent
-            });
+            result = Result<BlogDto>.Success(
+                new BlogDto()
+                {
+                    BlogId = blog.BlogId,
+                    BlogTitle = blog.BlogTitle,
+                    BlogAuthor = blog.BlogAuthor,
+                    BlogContent = blog.BlogContent
+                }
+            );
         }
         catch (Exception ex)
         {
             result = Result<BlogDto>.Failure(ex);
         }
 
-    result:
+        result:
         return result;
     }
 
-    public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogRequest, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> AddBlogAsync(
+        BlogRequestDto blogRequest,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
 
