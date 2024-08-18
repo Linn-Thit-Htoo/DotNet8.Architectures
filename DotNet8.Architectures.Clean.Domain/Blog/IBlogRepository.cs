@@ -12,5 +12,6 @@ namespace DotNet8.Architectures.Clean.Domain.Blog
     {
         Task<Result<BlogListDtoV1>> GetBlogsAsync(int pageNo, int pageSize, CancellationToken cancellationToken);
         Task<Result<BlogDto>> GetBlogByIdAsync(int id, CancellationToken cancellationToken);
+        Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogRequest, CancellationToken cancellationToken);
     }
 }

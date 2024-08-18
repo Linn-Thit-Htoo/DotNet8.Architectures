@@ -86,5 +86,30 @@ namespace DotNet8.Architectures.Clean.Infrastructure.Blog
         result:
             return result;
         }
+
+        public async Task<Result<BlogDto>> AddBlogAsync(BlogRequestDto blogRequest, CancellationToken cancellationToken)
+        {
+            Result<BlogDto> result;
+
+            try
+            {
+                var blog = new Tbl_Blog()
+                {
+                    BlogTitle = blogRequest.BlogTitle,
+                    BlogAuthor = blogRequest.BlogAuthor,
+                    BlogContent = blogRequest.BlogContent
+                };
+                await _context.Tbl_Blogs.AddAsync(blog, cancellationToken);
+                await _context.SaveChangesAsync(cancellationToken);
+
+                result = Result<BlogDto>.SaveSuccess();
+            }
+            catch (Exception ex)
+            {
+                result = Result<BlogDto>.Failure(ex);
+            }
+
+            return result;
+        }
     }
 }
