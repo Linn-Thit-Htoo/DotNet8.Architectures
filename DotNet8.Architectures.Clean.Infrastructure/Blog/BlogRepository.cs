@@ -57,5 +57,34 @@ namespace DotNet8.Architectures.Clean.Infrastructure.Blog
 
             return result;
         }
+
+        public async Task<Result<BlogDto>> GetBlogByIdAsync(int id, CancellationToken cancellationToken)
+        {
+            Result<BlogDto> result;
+            try
+            {
+                var blog = await _context.Tbl_Blogs.FindAsync([id, cancellationToken], cancellationToken: cancellationToken);
+                if (blog is null)
+                {
+                    result = Result<BlogDto>.NotFound();
+                    goto result;
+                }
+
+                result = Result<BlogDto>.Success(new BlogDto()
+                {
+                    BlogId = blog.BlogId,
+                    BlogTitle = blog.BlogTitle,
+                    BlogAuthor = blog.BlogAuthor,
+                    BlogContent = blog.BlogContent
+                });
+            }
+            catch (Exception ex)
+            {
+                result = Result<BlogDto>.Failure(ex);
+            }
+
+        result:
+            return result;
+        }
     }
 }
