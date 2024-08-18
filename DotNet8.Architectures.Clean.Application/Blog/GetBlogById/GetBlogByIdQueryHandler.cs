@@ -4,31 +4,30 @@ using DotNet8.Architectures.Utils;
 using DotNet8.Architectures.Utils.Resources;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.GetBlogById
+namespace DotNet8.Architectures.Clean.Application.Blog.GetBlogById;
+
+public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, Result<BlogDto>>
 {
-    public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, Result<BlogDto>>
+    private readonly IBlogRepository _blogRepository;
+
+    public GetBlogByIdQueryHandler(IBlogRepository blogRepository)
     {
-        private readonly IBlogRepository _blogRepository;
+        _blogRepository = blogRepository;
+    }
 
-        public GetBlogByIdQueryHandler(IBlogRepository blogRepository)
+    public async Task<Result<BlogDto>> Handle(GetBlogByIdQuery request, CancellationToken cancellationToken)
+    {
+        Result<BlogDto> result;
+
+        if (request.BlogId <= 0)
         {
-            _blogRepository = blogRepository;
+            result = Result<BlogDto>.Failure(MessageResource.InvalidId);
+            goto result;
         }
 
-        public async Task<Result<BlogDto>> Handle(GetBlogByIdQuery request, CancellationToken cancellationToken)
-        {
-            Result<BlogDto> result;
+        result = await _blogRepository.GetBlogByIdAsync(request.BlogId, cancellationToken);
 
-            if (request.BlogId <= 0)
-            {
-                result = Result<BlogDto>.Failure(MessageResource.InvalidId);
-                goto result;
-            }
-
-            result = await _blogRepository.GetBlogByIdAsync(request.BlogId, cancellationToken);
-
-        result:
-            return result;
-        }
+    result:
+        return result;
     }
 }
