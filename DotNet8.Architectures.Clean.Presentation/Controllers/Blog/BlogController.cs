@@ -26,7 +26,7 @@ namespace DotNet8.Architectures.Clean.Presentation.Controllers.Blog
             return Content(result);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetBlogById(int id)
         {
             var query = new GetBlogByIdQuery(id);
