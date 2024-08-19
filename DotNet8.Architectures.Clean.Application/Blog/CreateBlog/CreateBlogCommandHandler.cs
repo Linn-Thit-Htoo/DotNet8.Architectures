@@ -15,7 +15,10 @@ public class CreateBlogCommandHandler : IRequestHandler<CreateBlogCommand, Resul
         _blogRepository = blogRepository;
     }
 
-    public async Task<Result<BlogDto>> Handle(CreateBlogCommand request, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> Handle(
+        CreateBlogCommand request,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
 
@@ -39,7 +42,7 @@ public class CreateBlogCommandHandler : IRequestHandler<CreateBlogCommand, Resul
 
         result = await _blogRepository.AddBlogAsync(request.requestDto, cancellationToken);
 
-    result:
+        result:
         return result;
     }
 }
