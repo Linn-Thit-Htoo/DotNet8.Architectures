@@ -15,7 +15,10 @@ public class GetBlogListQueryHandler : IRequestHandler<GetBlogListQuery, Result<
         _blogRepository = blogRepository;
     }
 
-    public async Task<Result<BlogListDtoV1>> Handle(GetBlogListQuery request, CancellationToken cancellationToken)
+    public async Task<Result<BlogListDtoV1>> Handle(
+        GetBlogListQuery request,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogListDtoV1> result;
 
@@ -31,9 +34,13 @@ public class GetBlogListQueryHandler : IRequestHandler<GetBlogListQuery, Result<
             goto result;
         }
 
-        result = await _blogRepository.GetBlogsAsync(request.PageNo, request.PageSize, cancellationToken);
+        result = await _blogRepository.GetBlogsAsync(
+            request.PageNo,
+            request.PageSize,
+            cancellationToken
+        );
 
-    result:
+        result:
         return result;
     }
 }
