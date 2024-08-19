@@ -4,37 +4,36 @@ using DotNet8.Architectures.Utils;
 using DotNet8.Architectures.Utils.Resources;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.GetBlogList
+namespace DotNet8.Architectures.Clean.Application.Blog.GetBlogList;
+
+public class GetBlogListQueryHandler : IRequestHandler<GetBlogListQuery, Result<BlogListDtoV1>>
 {
-    public class GetBlogListQueryHandler : IRequestHandler<GetBlogListQuery, Result<BlogListDtoV1>>
+    private readonly IBlogRepository _blogRepository;
+
+    public GetBlogListQueryHandler(IBlogRepository blogRepository)
     {
-        private readonly IBlogRepository _blogRepository;
+        _blogRepository = blogRepository;
+    }
 
-        public GetBlogListQueryHandler(IBlogRepository blogRepository)
+    public async Task<Result<BlogListDtoV1>> Handle(GetBlogListQuery request, CancellationToken cancellationToken)
+    {
+        Result<BlogListDtoV1> result;
+
+        if (request.PageNo <= 0)
         {
-            _blogRepository = blogRepository;
+            result = Result<BlogListDtoV1>.Failure(MessageResource.InvalidPageNo);
+            goto result;
         }
 
-        public async Task<Result<BlogListDtoV1>> Handle(GetBlogListQuery request, CancellationToken cancellationToken)
+        if (request.PageSize <= 0)
         {
-            Result<BlogListDtoV1> result;
-
-            if (request.PageNo <= 0)
-            {
-                result = Result<BlogListDtoV1>.Failure(MessageResource.InvalidPageNo);
-                goto result;
-            }
-
-            if (request.PageSize <= 0)
-            {
-                result = Result<BlogListDtoV1>.Failure(MessageResource.InvalidPageSize);
-                goto result;
-            }
-
-            result = await _blogRepository.GetBlogsAsync(request.PageNo, request.PageSize, cancellationToken);
-
-        result:
-            return result;
+            result = Result<BlogListDtoV1>.Failure(MessageResource.InvalidPageSize);
+            goto result;
         }
+
+        result = await _blogRepository.GetBlogsAsync(request.PageNo, request.PageSize, cancellationToken);
+
+    result:
+        return result;
     }
 }
