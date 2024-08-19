@@ -124,12 +124,19 @@ public class BlogRepository : IBlogRepository
         return result;
     }
 
-    public async Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> UpdateBlogAsync(
+        BlogRequestDto requestDto,
+        int id,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
         try
         {
-            var blog = await _context.Tbl_Blogs.FindAsync([id, cancellationToken], cancellationToken: cancellationToken);
+            var blog = await _context.Tbl_Blogs.FindAsync(
+                [id, cancellationToken],
+                cancellationToken: cancellationToken
+            );
             if (blog is null)
             {
                 result = Result<BlogDto>.NotFound();
@@ -154,12 +161,19 @@ public class BlogRepository : IBlogRepository
         return result;
     }
 
-    public async Task<Result<BlogDto>> PatchBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> PatchBlogAsync(
+        BlogRequestDto requestDto,
+        int id,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
         try
         {
-            var blog = await _context.Tbl_Blogs.FindAsync([id, cancellationToken], cancellationToken: cancellationToken);
+            var blog = await _context.Tbl_Blogs.FindAsync(
+                [id, cancellationToken],
+                cancellationToken: cancellationToken
+            );
             if (blog is null)
             {
                 result = Result<BlogDto>.NotFound();
@@ -200,7 +214,10 @@ public class BlogRepository : IBlogRepository
         Result<BlogDto> result;
         try
         {
-            var blog = await _context.Tbl_Blogs.FindAsync([id, cancellationToken], cancellationToken: cancellationToken);
+            var blog = await _context.Tbl_Blogs.FindAsync(
+                [id, cancellationToken],
+                cancellationToken: cancellationToken
+            );
             if (blog is null)
             {
                 result = Result<BlogDto>.NotFound();
