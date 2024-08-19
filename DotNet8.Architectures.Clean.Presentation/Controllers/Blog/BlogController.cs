@@ -17,7 +17,11 @@ public class BlogController : BaseController
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetBlogs(int pageNo, int pageSize, CancellationToken cancellationToken)
+    public async Task<IActionResult> GetBlogs(
+        int pageNo,
+        int pageSize,
+        CancellationToken cancellationToken
+    )
     {
         var query = new GetBlogListQuery(pageNo, pageSize);
         var result = await _mediator.Send(query, cancellationToken);
