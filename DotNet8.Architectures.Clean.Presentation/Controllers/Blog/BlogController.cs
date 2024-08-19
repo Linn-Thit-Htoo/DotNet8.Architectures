@@ -1,6 +1,7 @@
 ﻿using DotNet8.Architectures.Clean.Application.Blog.CreateBlog;
 using DotNet8.Architectures.Clean.Application.Blog.GetBlogById;
 using DotNet8.Architectures.Clean.Application.Blog.GetBlogList;
+using DotNet8.Architectures.Clean.Application.Blog.UpdateBlog;
 using DotNet8.Architectures.DTOs.Features.Blog;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -44,6 +45,15 @@ public class BlogController : BaseController
     public async Task<IActionResult> CreateBlog([FromBody] BlogRequestDto requestDto, CancellationToken cancellationToken)
     {
         var command = new CreateBlogCommand(requestDto);
+        var result = await _mediator.Send(command, cancellationToken);
+
+        return Content(result);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateBlog([FromBody] BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    {
+        var command = new UpdateBlogCommand(requestDto, id);
         var result = await _mediator.Send(command, cancellationToken);
 
         return Content(result);
