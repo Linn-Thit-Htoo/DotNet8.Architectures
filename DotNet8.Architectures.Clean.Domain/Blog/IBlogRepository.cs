@@ -16,4 +16,5 @@ public interface IBlogRepository
         CancellationToken cancellationToken
     );
     Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken);
+    Task<Result<BlogDto>> PatchBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken);
 }

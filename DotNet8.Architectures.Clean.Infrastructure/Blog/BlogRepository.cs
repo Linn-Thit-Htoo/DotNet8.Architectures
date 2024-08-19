@@ -153,4 +153,45 @@ public class BlogRepository : IBlogRepository
     result:
         return result;
     }
+
+    public async Task<Result<BlogDto>> PatchBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    {
+        Result<BlogDto> result;
+        try
+        {
+            var blog = await _context.Tbl_Blogs.FindAsync([id, cancellationToken], cancellationToken: cancellationToken);
+            if (blog is null)
+            {
+                result = Result<BlogDto>.NotFound();
+                goto result;
+            }
+
+            if (!requestDto.BlogTitle.IsNullOrEmpty())
+            {
+                blog.BlogTitle += requestDto.BlogTitle;
+            }
+
+            if (!requestDto.BlogAuthor.IsNullOrEmpty())
+            {
+                blog.BlogAuthor += requestDto.BlogAuthor;
+            }
+
+            if (!requestDto.BlogContent.IsNullOrEmpty())
+            {
+                blog.BlogContent += requestDto.BlogContent;
+            }
+
+            _context.Tbl_Blogs.Update(blog);
+            await _context.SaveChangesAsync(cancellationToken);
+
+            result = Result<BlogDto>.UpdateSuccess();
+        }
+        catch (Exception ex)
+        {
+            result = Result<BlogDto>.Failure(ex);
+        }
+
+    result:
+        return result;
+    }
 }
