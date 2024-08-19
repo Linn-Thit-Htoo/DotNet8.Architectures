@@ -41,12 +41,12 @@ public class BlogRepository : IBlogRepository
             var model = new BlogListDtoV1()
             {
                 DataLst = lst.Select(x => new BlogDto()
-                    {
-                        BlogId = x.BlogId,
-                        BlogTitle = x.BlogTitle,
-                        BlogAuthor = x.BlogAuthor,
-                        BlogContent = x.BlogContent
-                    })
+                {
+                    BlogId = x.BlogId,
+                    BlogTitle = x.BlogTitle,
+                    BlogAuthor = x.BlogAuthor,
+                    BlogContent = x.BlogContent
+                })
                     .AsQueryable(),
                 PageSetting = pageSettingModel
             };
@@ -92,7 +92,7 @@ public class BlogRepository : IBlogRepository
             result = Result<BlogDto>.Failure(ex);
         }
 
-        result:
+    result:
         return result;
     }
 
@@ -122,5 +122,10 @@ public class BlogRepository : IBlogRepository
         }
 
         return result;
+    }
+
+    public Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
     }
 }
