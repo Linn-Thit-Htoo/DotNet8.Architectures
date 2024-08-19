@@ -15,7 +15,10 @@ public class UpdateBlogCommandHandler : IRequestHandler<UpdateBlogCommand, Resul
         _blogRepository = blogRepository;
     }
 
-    public async Task<Result<BlogDto>> Handle(UpdateBlogCommand request, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> Handle(
+        UpdateBlogCommand request,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
 
@@ -37,9 +40,13 @@ public class UpdateBlogCommandHandler : IRequestHandler<UpdateBlogCommand, Resul
             goto result;
         }
 
-        result = await _blogRepository.UpdateBlogAsync(request.RequestDto, request.BlogId, cancellationToken);
+        result = await _blogRepository.UpdateBlogAsync(
+            request.RequestDto,
+            request.BlogId,
+            cancellationToken
+        );
 
-    result:
+        result:
         return result;
     }
 }
