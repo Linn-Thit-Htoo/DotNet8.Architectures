@@ -15,7 +15,15 @@ public interface IBlogRepository
         BlogRequestDto blogRequest,
         CancellationToken cancellationToken
     );
-    Task<Result<BlogDto>> UpdateBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken);
-    Task<Result<BlogDto>> PatchBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken);
+    Task<Result<BlogDto>> UpdateBlogAsync(
+        BlogRequestDto requestDto,
+        int id,
+        CancellationToken cancellationToken
+    );
+    Task<Result<BlogDto>> PatchBlogAsync(
+        BlogRequestDto requestDto,
+        int id,
+        CancellationToken cancellationToken
+    );
     Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken);
 }
