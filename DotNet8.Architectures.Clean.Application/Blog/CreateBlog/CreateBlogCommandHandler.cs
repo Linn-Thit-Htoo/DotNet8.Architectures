@@ -4,43 +4,42 @@ using DotNet8.Architectures.Shared;
 using DotNet8.Architectures.Utils;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.CreateBlog
+namespace DotNet8.Architectures.Clean.Application.Blog.CreateBlog;
+
+public class CreateBlogCommandHandler : IRequestHandler<CreateBlogCommand, Result<BlogDto>>
 {
-    public class CreateBlogCommandHandler : IRequestHandler<CreateBlogCommand, Result<BlogDto>>
+    private readonly IBlogRepository _blogRepository;
+
+    public CreateBlogCommandHandler(IBlogRepository blogRepository)
     {
-        private readonly IBlogRepository _blogRepository;
+        _blogRepository = blogRepository;
+    }
 
-        public CreateBlogCommandHandler(IBlogRepository blogRepository)
+    public async Task<Result<BlogDto>> Handle(CreateBlogCommand request, CancellationToken cancellationToken)
+    {
+        Result<BlogDto> result;
+
+        if (request.requestDto.BlogTitle.IsNullOrEmpty())
         {
-            _blogRepository = blogRepository;
+            result = Result<BlogDto>.Failure("Blog Title cannot be empty.");
+            goto result;
         }
 
-        public async Task<Result<BlogDto>> Handle(CreateBlogCommand request, CancellationToken cancellationToken)
+        if (request.requestDto.BlogAuthor.IsNullOrEmpty())
         {
-            Result<BlogDto> result;
-
-            if (request.requestDto.BlogTitle.IsNullOrEmpty())
-            {
-                result = Result<BlogDto>.Failure("Blog Title cannot be empty.");
-                goto result;
-            }
-
-            if (request.requestDto.BlogAuthor.IsNullOrEmpty())
-            {
-                result = Result<BlogDto>.Failure("Blog Author cannot be empty.");
-                goto result;
-            }
-
-            if (request.requestDto.BlogContent.IsNullOrEmpty())
-            {
-                result = Result<BlogDto>.Failure("Blog Content");
-                goto result;
-            }
-
-            result = await _blogRepository.AddBlogAsync(request.requestDto, cancellationToken);
-
-        result:
-            return result;
+            result = Result<BlogDto>.Failure("Blog Author cannot be empty.");
+            goto result;
         }
+
+        if (request.requestDto.BlogContent.IsNullOrEmpty())
+        {
+            result = Result<BlogDto>.Failure("Blog Content");
+            goto result;
+        }
+
+        result = await _blogRepository.AddBlogAsync(request.requestDto, cancellationToken);
+
+    result:
+        return result;
     }
 }
