@@ -1,7 +1,6 @@
 ﻿using DotNet8.Architectures.Clean.Application.Blog.GetBlogById;
 using DotNet8.Architectures.Clean.Application.Blog.GetBlogList;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNet8.Architectures.Clean.Presentation.Controllers.Blog
