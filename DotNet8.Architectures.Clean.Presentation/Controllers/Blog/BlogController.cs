@@ -1,4 +1,5 @@
 ﻿using DotNet8.Architectures.Clean.Application.Blog.CreateBlog;
+using DotNet8.Architectures.Clean.Application.Blog.DeleteBlog;
 using DotNet8.Architectures.Clean.Application.Blog.GetBlogById;
 using DotNet8.Architectures.Clean.Application.Blog.GetBlogList;
 using DotNet8.Architectures.Clean.Application.Blog.UpdateBlog;
@@ -54,6 +55,15 @@ public class BlogController : BaseController
     public async Task<IActionResult> UpdateBlog([FromBody] BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
     {
         var command = new UpdateBlogCommand(requestDto, id);
+        var result = await _mediator.Send(command, cancellationToken);
+
+        return Content(result);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteBlog(int id, CancellationToken cancellationToken)
+    {
+        var command = new DeleteBlogCommand(id);
         var result = await _mediator.Send(command, cancellationToken);
 
         return Content(result);
