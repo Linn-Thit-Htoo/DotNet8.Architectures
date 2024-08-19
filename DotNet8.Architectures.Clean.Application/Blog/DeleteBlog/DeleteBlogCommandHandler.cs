@@ -15,7 +15,10 @@ public class DeleteBlogCommandHandler : IRequestHandler<DeleteBlogCommand, Resul
         _blogRepository = blogRepository;
     }
 
-    public async Task<Result<BlogDto>> Handle(DeleteBlogCommand request, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> Handle(
+        DeleteBlogCommand request,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
 
@@ -27,7 +30,7 @@ public class DeleteBlogCommandHandler : IRequestHandler<DeleteBlogCommand, Resul
 
         result = await _blogRepository.DeleteBlogAsync(request.BlogId, cancellationToken);
 
-    result:
+        result:
         return result;
     }
 }
