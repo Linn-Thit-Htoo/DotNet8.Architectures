@@ -43,7 +43,10 @@ public class BlogController : BaseController
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateBlog([FromBody] BlogRequestDto requestDto, CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateBlog(
+        [FromBody] BlogRequestDto requestDto,
+        CancellationToken cancellationToken
+    )
     {
         var command = new CreateBlogCommand(requestDto);
         var result = await _mediator.Send(command, cancellationToken);
@@ -52,7 +55,11 @@ public class BlogController : BaseController
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateBlog([FromBody] BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    public async Task<IActionResult> UpdateBlog(
+        [FromBody] BlogRequestDto requestDto,
+        int id,
+        CancellationToken cancellationToken
+    )
     {
         var command = new UpdateBlogCommand(requestDto, id);
         var result = await _mediator.Send(command, cancellationToken);
