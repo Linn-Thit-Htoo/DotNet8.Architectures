@@ -30,7 +30,7 @@ public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, Result<
 
         result = await _blogRepository.GetBlogByIdAsync(request.BlogId, cancellationToken);
 
-        result:
+    result:
         return result;
     }
 }
