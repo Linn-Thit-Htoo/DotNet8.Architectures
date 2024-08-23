@@ -1,6 +1,4 @@
-﻿using DotNet8.Architectures.Utils.Resources;
-
-namespace DotNet8.Architectures.Clean.Application.Features.Blog.DeleteBlog;
+﻿namespace DotNet8.Architectures.Clean.Application.Features.Blog.DeleteBlog;
 
 public class DeleteBlogCommandHandler : IRequestHandler<DeleteBlogCommand, Result<BlogDto>>
 {
