@@ -1,6 +1,4 @@
-﻿using DotNet8.Architectures.Shared;
-
-namespace DotNet8.Architectures.Hexagonal.API.Controllers;
+﻿namespace DotNet8.Architectures.Hexagonal.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
