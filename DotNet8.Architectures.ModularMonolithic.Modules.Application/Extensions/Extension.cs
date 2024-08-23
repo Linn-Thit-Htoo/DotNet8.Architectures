@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace DotNet8.Architectures.ModularMonolithic.Modules.Application.Extensions;
+﻿namespace DotNet8.Architectures.ModularMonolithic.Modules.Application.Extensions;
 
 public static class Extension
 {
