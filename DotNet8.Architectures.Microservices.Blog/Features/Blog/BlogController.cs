@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DotNet8.Architectures.DTOs.Features.Blog;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNet8.Architectures.Microservices.Blog.Features.Blog
@@ -25,6 +26,13 @@ namespace DotNet8.Architectures.Microservices.Blog.Features.Blog
         public async Task<IActionResult> GetBlogById(int id, CancellationToken cancellationToken)
         {
             var result = await _dA_Blog.GetBlogByIdAsync(id, cancellationToken);
+            return Content(result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateBlog([FromBody] BlogRequestDto blogRequest, CancellationToken cancellationToken)
+        {
+            var result = await _dA_Blog.AddBlogAsync(blogRequest, cancellationToken);
             return Content(result);
         }
     }
