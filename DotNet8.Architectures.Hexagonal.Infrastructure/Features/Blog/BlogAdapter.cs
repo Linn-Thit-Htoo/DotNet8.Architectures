@@ -43,9 +43,33 @@ namespace DotNet8.Architectures.Hexagonal.Infrastructure.Features.Blog
             return result;
         }
 
-        public Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken)
+        public async Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            Result<BlogDto> result;
+            try
+            {
+                var blog = await _context.Tbl_Blogs.FindAsync(
+                    [id, cancellationToken],
+                    cancellationToken: cancellationToken
+                );
+                if (blog is null)
+                {
+                    result = Result<BlogDto>.NotFound();
+                    goto result;
+                }
+
+                _context.Tbl_Blogs.Remove(blog);
+                await _context.SaveChangesAsync(cancellationToken);
+
+                result = Result<BlogDto>.DeleteSuccess();
+            }
+            catch (Exception ex)
+            {
+                result = Result<BlogDto>.Failure(ex);
+            }
+
+        result:
+            return result;
         }
 
         public async Task<Result<BlogDto>> GetBlogByIdAsync(int id, CancellationToken cancellationToken)
