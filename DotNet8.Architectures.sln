@@ -63,6 +63,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Modul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.ModularMonolithic.Modules.Presentation", "DotNet8.Architectures.ModularMonolithic.Modules.Presentation\DotNet8.Architectures.ModularMonolithic.Modules.Presentation.csproj", "{5C85CCAD-BEBC-4821-B656-190F7DB36C41}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{3EADC7BB-30CA-4033-8802-9C0288C95BBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateway", "gateway", "{F4E81EC6-850E-45F1-B4B1-5AF5A8ABA56F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{56966DAC-14AC-467A-A6B1-0E1C71783AAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Microservices.Gateway", "DotNet8.Architectures.Microservices.Gateway\DotNet8.Architectures.Microservices.Gateway.csproj", "{DBEF3A7A-4914-479B-B88E-CE192AAF13EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Microservices.Blog", "DotNet8.Architectures.Microservices.Blog\DotNet8.Architectures.Microservices.Blog.csproj", "{533DFD7E-FF34-4EDD-BE26-F7F808FA3BE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +159,14 @@ Global
 		{5C85CCAD-BEBC-4821-B656-190F7DB36C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C85CCAD-BEBC-4821-B656-190F7DB36C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C85CCAD-BEBC-4821-B656-190F7DB36C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBEF3A7A-4914-479B-B88E-CE192AAF13EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBEF3A7A-4914-479B-B88E-CE192AAF13EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBEF3A7A-4914-479B-B88E-CE192AAF13EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBEF3A7A-4914-479B-B88E-CE192AAF13EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{533DFD7E-FF34-4EDD-BE26-F7F808FA3BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{533DFD7E-FF34-4EDD-BE26-F7F808FA3BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{533DFD7E-FF34-4EDD-BE26-F7F808FA3BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{533DFD7E-FF34-4EDD-BE26-F7F808FA3BE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -179,6 +197,10 @@ Global
 		{F337B1E7-2927-4F6B-92CC-3468ABEBEE78} = {3842A3D3-06D0-4695-BAF6-26D9877856DA}
 		{0E705BB4-5D8E-4F07-81D4-55D6B3DD6F83} = {3842A3D3-06D0-4695-BAF6-26D9877856DA}
 		{5C85CCAD-BEBC-4821-B656-190F7DB36C41} = {3842A3D3-06D0-4695-BAF6-26D9877856DA}
+		{F4E81EC6-850E-45F1-B4B1-5AF5A8ABA56F} = {3EADC7BB-30CA-4033-8802-9C0288C95BBD}
+		{56966DAC-14AC-467A-A6B1-0E1C71783AAD} = {3EADC7BB-30CA-4033-8802-9C0288C95BBD}
+		{DBEF3A7A-4914-479B-B88E-CE192AAF13EB} = {F4E81EC6-850E-45F1-B4B1-5AF5A8ABA56F}
+		{533DFD7E-FF34-4EDD-BE26-F7F808FA3BE1} = {56966DAC-14AC-467A-A6B1-0E1C71783AAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D2FCB14-F503-44A7-881A-010BFA6966E0}

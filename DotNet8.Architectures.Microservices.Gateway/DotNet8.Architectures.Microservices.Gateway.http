@@ -1,0 +1,6 @@
+@DotNet8.Architectures.Microservices.Gateway_HostAddress = http://localhost:5152
+
+GET {{DotNet8.Architectures.Microservices.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
