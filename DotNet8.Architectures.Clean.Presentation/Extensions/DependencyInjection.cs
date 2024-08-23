@@ -1,5 +1,5 @@
-﻿using DotNet8.Architectures.Clean.Domain.Blog;
-using DotNet8.Architectures.Clean.Infrastructure.Blog;
+﻿using DotNet8.Architectures.Clean.Domain.Features.Blog;
+using DotNet8.Architectures.Clean.Infrastructure.Features.Blog;
 using Microsoft.EntityFrameworkCore;
 
 namespace DotNet8.Architectures.Clean.Presentation.Extensions

@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DotNet8.Architectures.DbService\DotNet8.Architectures.DbService.csproj" />
     <ProjectReference Include="..\DotNet8.Architectures.DTOs\DotNet8.Architectures.DTOs.csproj" />
+    <ProjectReference Include="..\DotNet8.Architectures.Extensions\DotNet8.Architectures.Extensions.csproj" />
     <ProjectReference Include="..\DotNet8.Architectures.Hexagonal.Domain\DotNet8.Architectures.Hexagonal.Domain.csproj" />
     <ProjectReference Include="..\DotNet8.Architectures.Shared\DotNet8.Architectures.Shared.csproj" />
     <ProjectReference Include="..\DotNet8.Architectures.Utils\DotNet8.Architectures.Utils.csproj" />

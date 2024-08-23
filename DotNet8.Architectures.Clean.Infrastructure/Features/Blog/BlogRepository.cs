@@ -1,4 +1,5 @@
 ﻿using DotNet8.Architectures.Clean.Domain.Blog;
+using DotNet8.Architectures.Clean.Domain.Features.Blog;
 using DotNet8.Architectures.DTOs.Features.Blog;
 using DotNet8.Architectures.DTOs.Features.PageSetting;
 using DotNet8.Architectures.Shared;
@@ -6,7 +7,7 @@ using DotNet8.Architectures.Utils;
 using MethodTimer;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotNet8.Architectures.Clean.Infrastructure.Blog;
+namespace DotNet8.Architectures.Clean.Infrastructure.Features.Blog;
 
 public class BlogRepository : IBlogRepository
 {
@@ -61,7 +62,6 @@ public class BlogRepository : IBlogRepository
         return result;
     }
 
-    [Time]
     public async Task<Result<BlogDto>> GetBlogByIdAsync(int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;

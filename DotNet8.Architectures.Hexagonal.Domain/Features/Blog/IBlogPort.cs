@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNet8.Architectures.Hexagonal.Domain.Blog
+namespace DotNet8.Architectures.Hexagonal.Domain.Features.Blog
 {
     public interface IBlogPort
     {

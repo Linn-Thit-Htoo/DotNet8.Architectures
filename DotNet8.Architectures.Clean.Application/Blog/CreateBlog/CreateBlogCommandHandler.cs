@@ -1,4 +1,4 @@
-﻿using DotNet8.Architectures.Clean.Domain.Blog;
+﻿using DotNet8.Architectures.Clean.Domain.Features.Blog;
 using DotNet8.Architectures.DTOs.Features.Blog;
 using DotNet8.Architectures.Shared;
 using DotNet8.Architectures.Utils;
