@@ -3,6 +3,7 @@ using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.
 using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.DeleteBlog;
 using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.GetBlogById;
 using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.GetBlogList;
+using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.PatchBlog;
 using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.UpdateBlog;
 using DotNet8.Architectures.ModularMonolithic.Modules.Presentation.Controllers;
 using MediatR;
@@ -63,6 +64,19 @@ public class BlogController : BaseController
     )
     {
         var command = new UpdateBlogCommand(requestDto, id);
+        var result = await _mediator.Send(command, cancellationToken);
+
+        return Content(result);
+    }
+
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> PatchBlog(
+        [FromBody] BlogRequestDto requestDto,
+        int id,
+        CancellationToken cancellationToken
+    )
+    {
+        var command = new PatchBlogCommand(requestDto, id);
         var result = await _mediator.Send(command, cancellationToken);
 
         return Content(result);
