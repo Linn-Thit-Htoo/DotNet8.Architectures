@@ -1,5 +1,4 @@
-﻿using DotNet8.Architectures.Clean.Domain.Blog;
-using DotNet8.Architectures.Clean.Domain.Features.Blog;
+﻿using DotNet8.Architectures.Clean.Domain.Features.Blog;
 using DotNet8.Architectures.DTOs.Features.Blog;
 using DotNet8.Architectures.DTOs.Features.PageSetting;
 using DotNet8.Architectures.Shared;

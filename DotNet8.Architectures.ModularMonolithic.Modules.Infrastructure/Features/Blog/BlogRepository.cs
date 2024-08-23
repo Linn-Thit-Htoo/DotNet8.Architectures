@@ -7,7 +7,7 @@ using DotNet8.Architectures.Shared;
 using DotNet8.Architectures.DTOs.Features.PageSetting;
 using DotNet8.Architectures.Extensions;
 
-namespace DotNet8.Architectures.Clean.Infrastructure.Features.Blog;
+namespace DotNet8.Architectures.ModularMonolithic.Modules.Infrastructure.Features.Blog;
 
 public class BlogRepository : IBlogRepository
 {

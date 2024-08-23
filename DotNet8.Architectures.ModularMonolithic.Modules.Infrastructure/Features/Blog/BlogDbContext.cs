@@ -1,4 +1,4 @@
-﻿namespace DotNet8.Architectures.Clean.Infrastructure.Features.Blog;
+﻿namespace DotNet8.Architectures.ModularMonolithic.Modules.Infrastructure.Features.Blog;
 
 public class BlogDbContext
 {

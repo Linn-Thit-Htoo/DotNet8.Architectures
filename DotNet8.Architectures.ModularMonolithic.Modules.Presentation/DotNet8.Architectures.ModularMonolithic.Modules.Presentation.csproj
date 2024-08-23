@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\DotNet8.Architectures.DbService\DotNet8.Architectures.DbService.csproj" />
+    <ProjectReference Include="..\DotNet8.Architectures.ModularMonolithic.Modules.Application\DotNet8.Architectures.ModularMonolithic.Modules.Application.csproj" />
+    <ProjectReference Include="..\DotNet8.Architectures.ModularMonolithic.Modules.Infrastructure\DotNet8.Architectures.ModularMonolithic.Modules.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
