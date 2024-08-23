@@ -42,7 +42,7 @@ public class CreateBlogCommandHandler : IRequestHandler<CreateBlogCommand, Resul
 
         result = await _blogRepository.AddBlogAsync(request.requestDto, cancellationToken);
 
-        result:
+    result:
         return result;
     }
 }
