@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DotNet8.Architectures.DbService\DotNet8.Architectures.DbService.csproj" />
     <ProjectReference Include="..\DotNet8.Architectures.Hexagonal.Application\DotNet8.Architectures.Hexagonal.Application.csproj" />
+    <ProjectReference Include="..\DotNet8.Architectures.Hexagonal.Infrastructure\DotNet8.Architectures.Hexagonal.Infrastructure.csproj" />
     <ProjectReference Include="..\DotNet8.Architectures.Shared\DotNet8.Architectures.Shared.csproj" />
   </ItemGroup>
 

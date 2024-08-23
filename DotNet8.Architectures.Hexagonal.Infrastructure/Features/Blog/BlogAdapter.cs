@@ -2,7 +2,6 @@
 using DotNet8.Architectures.DTOs.Features.Blog;
 using DotNet8.Architectures.DTOs.Features.PageSetting;
 using DotNet8.Architectures.Extensions;
-using DotNet8.Architectures.Hexagonal.Domain.Blog;
 using DotNet8.Architectures.Hexagonal.Domain.Features.Blog;
 using DotNet8.Architectures.Shared;
 using DotNet8.Architectures.Utils;
