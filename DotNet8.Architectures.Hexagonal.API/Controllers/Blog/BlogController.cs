@@ -1,15 +1,4 @@
-﻿using DotNet8.Architectures.DTOs.Features.Blog;
-using DotNet8.Architectures.Hexagonal.Application.Features.Blog.CreateBlog;
-using DotNet8.Architectures.Hexagonal.Application.Features.Blog.DeleteBlog;
-using DotNet8.Architectures.Hexagonal.Application.Features.Blog.GetBlogById;
-using DotNet8.Architectures.Hexagonal.Application.Features.Blog.GetBlogList;
-using DotNet8.Architectures.Hexagonal.Application.Features.Blog.PatchBlog;
-using DotNet8.Architectures.Hexagonal.Application.Features.Blog.UpdateBlog;
-using MediatR;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-namespace DotNet8.Architectures.Hexagonal.API.Controllers.Blog
+﻿namespace DotNet8.Architectures.Hexagonal.API.Controllers.Blog
 {
     [Route("api/[controller]")]
     [ApiController]
