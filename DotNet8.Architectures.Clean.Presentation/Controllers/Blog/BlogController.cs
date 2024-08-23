@@ -1,14 +1,4 @@
-﻿using DotNet8.Architectures.Clean.Application.Features.Blog.CreateBlog;
-using DotNet8.Architectures.Clean.Application.Features.Blog.DeleteBlog;
-using DotNet8.Architectures.Clean.Application.Features.Blog.GetBlogById;
-using DotNet8.Architectures.Clean.Application.Features.Blog.GetBlogList;
-using DotNet8.Architectures.Clean.Application.Features.Blog.PatchBlog;
-using DotNet8.Architectures.Clean.Application.Features.Blog.UpdateBlog;
-using DotNet8.Architectures.DTOs.Features.Blog;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-
-namespace DotNet8.Architectures.Clean.Presentation.Controllers.Blog;
+﻿namespace DotNet8.Architectures.Clean.Presentation.Controllers.Blog;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -69,10 +59,14 @@ public class BlogController : BaseController
     }
 
     [HttpPatch("{id}")]
-    public async Task<IActionResult> PatchBlog([FromBody] BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    public async Task<IActionResult> PatchBlog(
+        [FromBody] BlogRequestDto requestDto,
+        int id,
+        CancellationToken cancellationToken
+    )
     {
         var command = new PatchBlogCommand(requestDto, id);
-        var result = await _mediator.Send(command,cancellationToken);
+        var result = await _mediator.Send(command, cancellationToken);
 
         return Content(result);
     }
