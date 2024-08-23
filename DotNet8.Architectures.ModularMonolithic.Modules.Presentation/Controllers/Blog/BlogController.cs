@@ -1,15 +1,4 @@
-﻿using DotNet8.Architectures.DTOs.Features.Blog;
-using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.CreateBlog;
-using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.DeleteBlog;
-using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.GetBlogById;
-using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.GetBlogList;
-using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.PatchBlog;
-using DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.UpdateBlog;
-using DotNet8.Architectures.ModularMonolithic.Modules.Presentation.Controllers;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-
-namespace DotNet8.Architectures.ModularMonolithic.Modules.Presentation.Controllers.Blog;
+﻿namespace DotNet8.Architectures.ModularMonolithic.Modules.Presentation.Controllers.Blog;
 
 [Route("api/[controller]")]
 [ApiController]
