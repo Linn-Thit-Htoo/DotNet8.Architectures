@@ -1,7 +1,4 @@
-﻿using DotNet8.Architectures.DTOs.Features.Blog;
-using DotNet8.Architectures.Utils;
-
-namespace DotNet8.Architectures.Clean.Domain.Features.Blog;
+﻿namespace DotNet8.Architectures.Clean.Domain.Features.Blog;
 
 public interface IBlogRepository
 {
