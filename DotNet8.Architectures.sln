@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Hexag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Hexagonal.API", "DotNet8.Architectures.Hexagonal.API\DotNet8.Architectures.Hexagonal.API.csproj", "{49BCED8A-82B9-455A-99FD-457169067718}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Hexagonal.Application", "DotNet8.Architectures.Hexagonal.Application\DotNet8.Architectures.Hexagonal.Application.csproj", "{B6BE1F4A-80BB-4B16-97E1-4813F7A4FE63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,10 @@ Global
 		{49BCED8A-82B9-455A-99FD-457169067718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49BCED8A-82B9-455A-99FD-457169067718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49BCED8A-82B9-455A-99FD-457169067718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6BE1F4A-80BB-4B16-97E1-4813F7A4FE63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BE1F4A-80BB-4B16-97E1-4813F7A4FE63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BE1F4A-80BB-4B16-97E1-4813F7A4FE63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BE1F4A-80BB-4B16-97E1-4813F7A4FE63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +133,7 @@ Global
 		{BC5934C3-93D8-4EEB-A309-2FE2DCDC5A85} = {FE1249B0-E48A-4869-9C35-7CDC5C1853A5}
 		{7F823BC7-B54A-4302-A216-4887F91339A6} = {FE1249B0-E48A-4869-9C35-7CDC5C1853A5}
 		{49BCED8A-82B9-455A-99FD-457169067718} = {FE1249B0-E48A-4869-9C35-7CDC5C1853A5}
+		{B6BE1F4A-80BB-4B16-97E1-4813F7A4FE63} = {FE1249B0-E48A-4869-9C35-7CDC5C1853A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D2FCB14-F503-44A7-881A-010BFA6966E0}
