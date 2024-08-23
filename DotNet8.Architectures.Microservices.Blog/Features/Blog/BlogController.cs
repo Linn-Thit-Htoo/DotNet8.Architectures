@@ -20,5 +20,12 @@ namespace DotNet8.Architectures.Microservices.Blog.Features.Blog
             var result = await _dA_Blog.GetBlogsAsync(pageNo, pageSize, cancellationToken);
             return Content(result);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBlogById(int id, CancellationToken cancellationToken)
+        {
+            var result = await _dA_Blog.GetBlogByIdAsync(id, cancellationToken);
+            return Content(result);
+        }
     }
 }
