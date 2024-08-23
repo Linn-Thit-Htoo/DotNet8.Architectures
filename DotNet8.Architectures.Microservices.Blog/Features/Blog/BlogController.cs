@@ -42,5 +42,12 @@ namespace DotNet8.Architectures.Microservices.Blog.Features.Blog
             var result = await _dA_Blog.UpdateBlogAsync(blogRequest, id, cancellationToken);
             return Content(result);
         }
+
+        [HttpPatch]
+        public async Task<IActionResult> PatchBlog([FromBody] BlogRequestDto blogRequest, int id, CancellationToken cancellationToken)
+        {
+            var result = await _dA_Blog.PatchBlogAsync(blogRequest, id, cancellationToken);
+            return Content(result);
+        }
     }
 }
