@@ -1,7 +1,4 @@
-﻿using DotNet8.Architectures.Clean.Domain.Features.Blog;
-using DotNet8.Architectures.Shared;
-
-namespace DotNet8.Architectures.Clean.Application.Features.Blog.UpdateBlog;
+﻿namespace DotNet8.Architectures.Clean.Application.Features.Blog.UpdateBlog;
 
 public class UpdateBlogCommandHandler : IRequestHandler<UpdateBlogCommand, Result<BlogDto>>
 {

@@ -1,5 +1,4 @@
-﻿using DotNet8.Architectures.Clean.Domain.Features.Blog;
-using DotNet8.Architectures.Utils.Resources;
+﻿using DotNet8.Architectures.Utils.Resources;
 
 namespace DotNet8.Architectures.Clean.Application.Features.Blog.DeleteBlog;
 
