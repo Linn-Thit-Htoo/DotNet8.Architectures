@@ -2,6 +2,8 @@
 
 global using DotNet8.Architectures.DbService;
 global using DotNet8.Architectures.DTOs.Features.Blog;
+global using DotNet8.Architectures.Hexagonal.API.Extensions;
+global using DotNet8.Architectures.Hexagonal.Application.Extensions;
 global using DotNet8.Architectures.Hexagonal.Application.Features.Blog.CreateBlog;
 global using DotNet8.Architectures.Hexagonal.Application.Features.Blog.DeleteBlog;
 global using DotNet8.Architectures.Hexagonal.Application.Features.Blog.GetBlogById;
