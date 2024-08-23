@@ -1,8 +1,5 @@
 ﻿using DotNet8.Architectures.Clean.Domain.Features.Blog;
-using DotNet8.Architectures.DTOs.Features.Blog;
 using DotNet8.Architectures.Shared;
-using DotNet8.Architectures.Utils;
-using MediatR;
 
 namespace DotNet8.Architectures.Clean.Application.Features.Blog.UpdateBlog;
 

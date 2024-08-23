@@ -1,8 +1,5 @@
 ﻿using DotNet8.Architectures.Clean.Domain.Features.Blog;
-using DotNet8.Architectures.DTOs.Features.Blog;
-using DotNet8.Architectures.Utils;
 using DotNet8.Architectures.Utils.Resources;
-using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
