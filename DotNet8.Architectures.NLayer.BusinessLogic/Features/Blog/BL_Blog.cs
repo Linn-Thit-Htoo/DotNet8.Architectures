@@ -101,4 +101,26 @@ public class BL_Blog
     result:
         return result;
     }
+
+    public async Task<Result<BlogDto>> PatchBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    {
+        Result<BlogDto> result;
+        try
+        {
+            if (id <= 0)
+            {
+                result = Result<BlogDto>.Failure(MessageResource.InvalidId);
+                goto result;
+            }
+
+            result = await _dA_Blog.PatchBlogAsync(requestDto, id, cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            result = Result<BlogDto>.Failure(ex);
+        }
+
+    result:
+        return result;
+    }
 }

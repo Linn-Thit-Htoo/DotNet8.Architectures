@@ -39,6 +39,12 @@ public class BlogController : BaseController
         return Content(result);
     }
 
+    [HttpPatch]
+    public async Task<IActionResult> PatchBlog([FromBody] BlogRequestDto blogRequest, int id, CancellationToken cancellationToken)
+    {
+        var result = await _bL_Blog.PatchBlogAsync(blogRequest, id, cancellationToken);
+    }
+
     [HttpPut]
     public async Task<IActionResult> UpdateBlog(
         [FromBody] BlogRequestDto blogRequest,
