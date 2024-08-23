@@ -1,6 +1,3 @@
-using DotNet8.Architectures.Clean.Application.Extensions;
-using DotNet8.Architectures.Clean.Presentation.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
