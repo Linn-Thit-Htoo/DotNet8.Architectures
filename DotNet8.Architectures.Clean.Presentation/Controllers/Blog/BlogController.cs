@@ -1,8 +1,8 @@
-﻿using DotNet8.Architectures.Clean.Application.Blog.CreateBlog;
-using DotNet8.Architectures.Clean.Application.Blog.DeleteBlog;
-using DotNet8.Architectures.Clean.Application.Blog.GetBlogById;
-using DotNet8.Architectures.Clean.Application.Blog.GetBlogList;
-using DotNet8.Architectures.Clean.Application.Blog.UpdateBlog;
+﻿using DotNet8.Architectures.Clean.Application.Features.Blog.CreateBlog;
+using DotNet8.Architectures.Clean.Application.Features.Blog.DeleteBlog;
+using DotNet8.Architectures.Clean.Application.Features.Blog.GetBlogById;
+using DotNet8.Architectures.Clean.Application.Features.Blog.GetBlogList;
+using DotNet8.Architectures.Clean.Application.Features.Blog.UpdateBlog;
 using DotNet8.Architectures.DTOs.Features.Blog;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
