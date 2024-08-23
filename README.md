@@ -12,9 +12,9 @@
 
 - ## Clean Architecture
 
-  [https://medium.com/@pooja0403keshri/clean-architecture-a-comprehensive-guide-with-c-676beed5bdbb](https://medium.com/@pooja0403keshri/clean-architecture-a-comprehensive-guide-with-c-676beed5bdbb)
+    [https://medium.com/@pooja0403keshri/clean-architecture-a-comprehensive-guide-with-c-676beed5bdbb](https://medium.com/@pooja0403keshri/clean-architecture-a-comprehensive-guide-with-c-676beed5bdbb)
 
-[https://medium.com/@mohanedzekry/clean-architecture-in-asp-net-core-web-api-d44e33893e1d](https://medium.com/@mohanedzekry/clean-architecture-in-asp-net-core-web-api-d44e33893e1d)
+    [https://medium.com/@mohanedzekry/clean-architecture-in-asp-net-core-web-api-d44e33893e1d](https://medium.com/@mohanedzekry/clean-architecture-in-asp-net-core-web-api-d44e33893e1d)
 
 - ## Modular Monolithic Architecture
 
