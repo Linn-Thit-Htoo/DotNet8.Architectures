@@ -40,7 +40,7 @@ public class GetBlogListQueryHandler : IRequestHandler<GetBlogListQuery, Result<
             cancellationToken
         );
 
-        result:
+    result:
         return result;
     }
 }
