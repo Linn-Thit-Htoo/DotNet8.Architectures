@@ -2,6 +2,7 @@
 using DotNet8.Architectures.Clean.Application.Features.Blog.DeleteBlog;
 using DotNet8.Architectures.Clean.Application.Features.Blog.GetBlogById;
 using DotNet8.Architectures.Clean.Application.Features.Blog.GetBlogList;
+using DotNet8.Architectures.Clean.Application.Features.Blog.PatchBlog;
 using DotNet8.Architectures.Clean.Application.Features.Blog.UpdateBlog;
 using DotNet8.Architectures.DTOs.Features.Blog;
 using MediatR;
@@ -67,10 +68,14 @@ public class BlogController : BaseController
         return Content(result);
     }
 
-    //[HttpPatch]
-    //public async Task<IActionResult> PatchBlog([FromBody] BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
-    //{
-    //}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> PatchBlog([FromBody] BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    {
+        var command = new PatchBlogCommand(requestDto, id);
+        var result = await _mediator.Send(command,cancellationToken);
+
+        return Content(result);
+    }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBlog(int id, CancellationToken cancellationToken)
