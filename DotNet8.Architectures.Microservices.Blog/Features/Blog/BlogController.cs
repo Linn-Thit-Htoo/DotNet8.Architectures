@@ -15,7 +15,7 @@ namespace DotNet8.Architectures.Microservices.Blog.Features.Blog
             _dA_Blog = dA_Blog;
         }
 
-        [HttpGet]
+        [HttpGet] // https://localhost:7080/api/gateway/blogs?pageNo=1&pageSize=2
         public async Task<IActionResult> GetBlogs(int pageNo, int pageSize, CancellationToken cancellationToken)
         {
             var result = await _dA_Blog.GetBlogsAsync(pageNo, pageSize, cancellationToken);
