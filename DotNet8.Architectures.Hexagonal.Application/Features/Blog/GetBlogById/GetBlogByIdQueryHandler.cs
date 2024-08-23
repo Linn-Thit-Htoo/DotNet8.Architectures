@@ -1,8 +1,4 @@
-﻿using DotNet8.Architectures.DTOs.Features.Blog;
-using DotNet8.Architectures.Hexagonal.Domain.Features.Blog;
-using DotNet8.Architectures.Utils;
-using DotNet8.Architectures.Utils.Resources;
-using MediatR;
+﻿using DotNet8.Architectures.Utils.Resources;
 
 namespace DotNet8.Architectures.Hexagonal.Application.Features.Blog.GetBlogById;
 
