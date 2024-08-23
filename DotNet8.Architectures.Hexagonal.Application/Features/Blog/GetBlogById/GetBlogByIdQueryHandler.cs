@@ -1,6 +1,4 @@
-﻿using DotNet8.Architectures.Utils.Resources;
-
-namespace DotNet8.Architectures.Hexagonal.Application.Features.Blog.GetBlogById;
+﻿namespace DotNet8.Architectures.Hexagonal.Application.Features.Blog.GetBlogById;
 
 public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, Result<BlogDto>>
 {
