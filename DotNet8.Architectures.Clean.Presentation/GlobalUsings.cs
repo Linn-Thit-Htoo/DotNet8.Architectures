@@ -9,6 +9,7 @@ global using DotNet8.Architectures.Clean.Application.Features.Blog.UpdateBlog;
 global using DotNet8.Architectures.Clean.Domain.Features.Blog;
 global using DotNet8.Architectures.Clean.Infrastructure.Features.Blog;
 global using DotNet8.Architectures.DTOs.Features.Blog;
+global using DotNet8.Architectures.Shared;
 global using MediatR;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore;
