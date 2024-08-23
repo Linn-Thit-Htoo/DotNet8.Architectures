@@ -46,7 +46,7 @@ public class BlogController : BaseController
         return Content(result);
     }
 
-    [HttpPut]
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateBlog(
         [FromBody] BlogRequestDto blogRequest,
         int id,
@@ -54,6 +54,13 @@ public class BlogController : BaseController
     )
     {
         var result = await _bL_Blog.UpdateBlogAsync(blogRequest, id, cancellationToken);
+        return Content(result);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteBlog(int id, CancellationToken cancellationToken)
+    {
+        var result = await _bL_Blog.DeleteBlogAsync(id, cancellationToken);
         return Content(result);
     }
 }
