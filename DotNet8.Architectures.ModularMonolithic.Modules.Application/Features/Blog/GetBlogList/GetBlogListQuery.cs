@@ -1,8 +1,4 @@
-﻿using DotNet8.Architectures.DTOs.Features.Blog;
-using DotNet8.Architectures.Utils;
-using MediatR;
-
-namespace DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.GetBlogList;
+﻿namespace DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.GetBlogList;
 
 public class GetBlogListQuery : IRequest<Result<BlogListDtoV1>>
 {

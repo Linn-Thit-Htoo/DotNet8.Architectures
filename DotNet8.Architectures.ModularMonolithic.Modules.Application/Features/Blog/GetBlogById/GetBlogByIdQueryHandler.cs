@@ -1,10 +1,4 @@
-﻿using DotNet8.Architectures.DTOs.Features.Blog;
-using DotNet8.Architectures.ModularMonolithic.Modules.Domain.Features.Blog;
-using DotNet8.Architectures.Utils;
-using DotNet8.Architectures.Utils.Resources;
-using MediatR;
-
-namespace DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.GetBlogById;
+﻿namespace DotNet8.Architectures.ModularMonolithic.Modules.Application.Features.Blog.GetBlogById;
 
 public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, Result<BlogDto>>
 {
