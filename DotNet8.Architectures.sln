@@ -25,13 +25,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.Exten
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clean", "Clean", "{E4E970C6-69ED-4984-A67F-133DD9816CBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Clean.Domain", "DotNet8.Architectures.Clean.Domain\DotNet8.Architectures.Clean.Domain.csproj", "{D6C288FA-F33B-4632-869D-4B2D60F1320B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.Clean.Domain", "DotNet8.Architectures.Clean.Domain\DotNet8.Architectures.Clean.Domain.csproj", "{D6C288FA-F33B-4632-869D-4B2D60F1320B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Clean.Application", "DotNet8.Architectures.Clean.Application\DotNet8.Architectures.Clean.Application.csproj", "{16DA814E-6ACF-499F-9F40-1F1CA61E73F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.Clean.Application", "DotNet8.Architectures.Clean.Application\DotNet8.Architectures.Clean.Application.csproj", "{16DA814E-6ACF-499F-9F40-1F1CA61E73F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Clean.Infrastructure", "DotNet8.Architectures.Clean.Infrastructure\DotNet8.Architectures.Clean.Infrastructure.csproj", "{0B3FC062-5CC7-479E-BF77-D7FF9934A21C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.Clean.Infrastructure", "DotNet8.Architectures.Clean.Infrastructure\DotNet8.Architectures.Clean.Infrastructure.csproj", "{0B3FC062-5CC7-479E-BF77-D7FF9934A21C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet8.Architectures.Clean.Presentation", "DotNet8.Architectures.Clean.Presentation\DotNet8.Architectures.Clean.Presentation.csproj", "{E30512DB-D395-4A71-8DA8-2F48008D3013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet8.Architectures.Clean.Presentation", "DotNet8.Architectures.Clean.Presentation\DotNet8.Architectures.Clean.Presentation.csproj", "{E30512DB-D395-4A71-8DA8-2F48008D3013}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hexagonal", "Hexagonal", "{FE1249B0-E48A-4869-9C35-7CDC5C1853A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
