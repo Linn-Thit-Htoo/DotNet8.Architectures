@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace DotNet8.Architectures.Hexagonal.Application.Extensions;
+﻿namespace DotNet8.Architectures.Hexagonal.Application.Extensions;
 
 public static class Extension
 {
