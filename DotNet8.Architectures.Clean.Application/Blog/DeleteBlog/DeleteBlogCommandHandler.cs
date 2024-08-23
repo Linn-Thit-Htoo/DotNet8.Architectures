@@ -30,7 +30,7 @@ public class DeleteBlogCommandHandler : IRequestHandler<DeleteBlogCommand, Resul
 
         result = await _blogRepository.DeleteBlogAsync(request.BlogId, cancellationToken);
 
-        result:
+    result:
         return result;
     }
 }
