@@ -3,6 +3,7 @@ using DotNet8.Architectures.Hexagonal.Application.Features.Blog.CreateBlog;
 using DotNet8.Architectures.Hexagonal.Application.Features.Blog.DeleteBlog;
 using DotNet8.Architectures.Hexagonal.Application.Features.Blog.GetBlogById;
 using DotNet8.Architectures.Hexagonal.Application.Features.Blog.GetBlogList;
+using DotNet8.Architectures.Hexagonal.Application.Features.Blog.PatchBlog;
 using DotNet8.Architectures.Hexagonal.Application.Features.Blog.UpdateBlog;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -63,6 +64,15 @@ namespace DotNet8.Architectures.Hexagonal.API.Controllers.Blog
         )
         {
             var command = new UpdateBlogCommand(requestDto, id);
+            var result = await _mediator.Send(command, cancellationToken);
+
+            return Content(result);
+        }
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchBlog([FromBody] BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+        {
+            var command = new PatchBlogCommand(requestDto, id);
             var result = await _mediator.Send(command, cancellationToken);
 
             return Content(result);
