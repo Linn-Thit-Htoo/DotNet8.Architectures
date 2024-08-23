@@ -1,6 +1,4 @@
-﻿using DotNet8.Architectures.Shared;
-
-namespace DotNet8.Architectures.NLayer.DataAccess.Features.Blog;
+﻿namespace DotNet8.Architectures.NLayer.DataAccess.Features.Blog;
 
 public class DA_Blog
 {
@@ -135,7 +133,11 @@ public class DA_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> PatchBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> PatchBlogAsync(
+        BlogRequestDto requestDto,
+        int id,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
         try

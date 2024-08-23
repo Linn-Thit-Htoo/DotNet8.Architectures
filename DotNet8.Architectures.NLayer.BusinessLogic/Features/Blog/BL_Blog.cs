@@ -102,7 +102,11 @@ public class BL_Blog
         return result;
     }
 
-    public async Task<Result<BlogDto>> PatchBlogAsync(BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    public async Task<Result<BlogDto>> PatchBlogAsync(
+        BlogRequestDto requestDto,
+        int id,
+        CancellationToken cancellationToken
+    )
     {
         Result<BlogDto> result;
         try
