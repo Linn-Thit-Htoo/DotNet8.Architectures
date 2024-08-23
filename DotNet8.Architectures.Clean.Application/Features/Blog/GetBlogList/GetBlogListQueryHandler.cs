@@ -4,7 +4,7 @@ using DotNet8.Architectures.Utils;
 using DotNet8.Architectures.Utils.Resources;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.GetBlogList;
+namespace DotNet8.Architectures.Clean.Application.Features.Blog.GetBlogList;
 
 public class GetBlogListQueryHandler : IRequestHandler<GetBlogListQuery, Result<BlogListDtoV1>>
 {

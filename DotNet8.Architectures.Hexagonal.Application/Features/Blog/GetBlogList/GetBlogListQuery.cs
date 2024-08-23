@@ -2,7 +2,7 @@
 using DotNet8.Architectures.Utils;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.GetBlogList;
+namespace DotNet8.Architectures.Hexagonal.Application.Features.Blog.GetBlogList;
 
 public class GetBlogListQuery : IRequest<Result<BlogListDtoV1>>
 {

@@ -4,19 +4,19 @@ using DotNet8.Architectures.Utils;
 using DotNet8.Architectures.Utils.Resources;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.GetBlogById;
+namespace DotNet8.Architectures.Clean.Application.Features.Blog.DeleteBlog;
 
-public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, Result<BlogDto>>
+public class DeleteBlogCommandHandler : IRequestHandler<DeleteBlogCommand, Result<BlogDto>>
 {
     private readonly IBlogRepository _blogRepository;
 
-    public GetBlogByIdQueryHandler(IBlogRepository blogRepository)
+    public DeleteBlogCommandHandler(IBlogRepository blogRepository)
     {
         _blogRepository = blogRepository;
     }
 
     public async Task<Result<BlogDto>> Handle(
-        GetBlogByIdQuery request,
+        DeleteBlogCommand request,
         CancellationToken cancellationToken
     )
     {
@@ -28,7 +28,7 @@ public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, Result<
             goto result;
         }
 
-        result = await _blogRepository.GetBlogByIdAsync(request.BlogId, cancellationToken);
+        result = await _blogRepository.DeleteBlogAsync(request.BlogId, cancellationToken);
 
     result:
         return result;

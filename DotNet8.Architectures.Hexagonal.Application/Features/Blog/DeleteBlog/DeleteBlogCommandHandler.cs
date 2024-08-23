@@ -1,18 +1,18 @@
-﻿using DotNet8.Architectures.Clean.Domain.Features.Blog;
-using DotNet8.Architectures.DTOs.Features.Blog;
+﻿using DotNet8.Architectures.DTOs.Features.Blog;
+using DotNet8.Architectures.Hexagonal.Domain.Features.Blog;
 using DotNet8.Architectures.Utils;
 using DotNet8.Architectures.Utils.Resources;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.DeleteBlog;
+namespace DotNet8.Architectures.Hexagonal.Application.Features.Blog.DeleteBlog;
 
 public class DeleteBlogCommandHandler : IRequestHandler<DeleteBlogCommand, Result<BlogDto>>
 {
-    private readonly IBlogRepository _blogRepository;
+    private readonly IBlogPort _blogPort;
 
-    public DeleteBlogCommandHandler(IBlogRepository blogRepository)
+    public DeleteBlogCommandHandler(IBlogPort blogPort)
     {
-        _blogRepository = blogRepository;
+        _blogPort = blogPort;
     }
 
     public async Task<Result<BlogDto>> Handle(
@@ -28,7 +28,7 @@ public class DeleteBlogCommandHandler : IRequestHandler<DeleteBlogCommand, Resul
             goto result;
         }
 
-        result = await _blogRepository.DeleteBlogAsync(request.BlogId, cancellationToken);
+        result = await _blogPort.DeleteBlogAsync(request.BlogId, cancellationToken);
 
     result:
         return result;

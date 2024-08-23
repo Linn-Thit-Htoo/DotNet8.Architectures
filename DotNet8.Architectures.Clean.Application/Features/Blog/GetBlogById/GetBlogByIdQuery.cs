@@ -2,7 +2,7 @@
 using DotNet8.Architectures.Utils;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.GetBlogById;
+namespace DotNet8.Architectures.Clean.Application.Features.Blog.GetBlogById;
 
 public class GetBlogByIdQuery : IRequest<Result<BlogDto>>
 {

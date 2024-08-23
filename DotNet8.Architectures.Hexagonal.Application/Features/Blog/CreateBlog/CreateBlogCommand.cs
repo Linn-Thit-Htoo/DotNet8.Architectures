@@ -2,7 +2,7 @@
 using DotNet8.Architectures.Utils;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.CreateBlog;
+namespace DotNet8.Architectures.Hexagonal.Application.Features.Blog.CreateBlog;
 
 public class CreateBlogCommand : IRequest<Result<BlogDto>>
 {

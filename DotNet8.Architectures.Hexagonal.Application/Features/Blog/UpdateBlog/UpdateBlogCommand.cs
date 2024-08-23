@@ -2,7 +2,7 @@
 using DotNet8.Architectures.Utils;
 using MediatR;
 
-namespace DotNet8.Architectures.Clean.Application.Blog.UpdateBlog;
+namespace DotNet8.Architectures.Hexagonal.Application.Features.Blog.UpdateBlog;
 
 public class UpdateBlogCommand : IRequest<Result<BlogDto>>
 {
