@@ -1,9 +1,7 @@
-﻿using DotNet8.Architectures.DbService;
-using DotNet8.Architectures.DTOs.Features.Blog;
+﻿using DotNet8.Architectures.DTOs.Features.Blog;
 using DotNet8.Architectures.DTOs.Features.PageSetting;
 using DotNet8.Architectures.Shared;
 using DotNet8.Architectures.Utils;
-using Microsoft.EntityFrameworkCore;
 using DotNet8.Architectures.Extensions;
 
 namespace DotNet8.Architectures.Microservices.Blog.Features.Blog
