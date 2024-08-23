@@ -67,6 +67,11 @@ public class BlogController : BaseController
         return Content(result);
     }
 
+    //[HttpPatch]
+    //public async Task<IActionResult> PatchBlog([FromBody] BlogRequestDto requestDto, int id, CancellationToken cancellationToken)
+    //{
+    //}
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBlog(int id, CancellationToken cancellationToken)
     {
