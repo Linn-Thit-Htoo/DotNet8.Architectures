@@ -11,6 +11,8 @@ public class BlogController : BaseController
         _dA_Blog = dA_Blog;
     }
 
+    #region GetBlogs
+
     [HttpGet] // https://localhost:7080/api/gateway/blogs?pageNo=1&pageSize=2
     public async Task<IActionResult> GetBlogs(
         int pageNo,
@@ -21,6 +23,8 @@ public class BlogController : BaseController
         var result = await _dA_Blog.GetBlogsAsync(pageNo, pageSize, cancellationToken);
         return Content(result);
     }
+
+    #endregion
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetBlogById(int id, CancellationToken cancellationToken)
