@@ -37,6 +37,8 @@ public class BlogController : BaseController
 
     #endregion
 
+    #region Create Blog
+
     [HttpPost]
     public async Task<IActionResult> CreateBlog(
         [FromBody] BlogRequestDto blogRequest,
@@ -46,6 +48,8 @@ public class BlogController : BaseController
         var result = await _dA_Blog.AddBlogAsync(blogRequest, cancellationToken);
         return Content(result);
     }
+
+    #endregion
 
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateBlog(
