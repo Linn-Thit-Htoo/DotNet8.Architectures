@@ -10,6 +10,8 @@ public static class DependencyInjection
         return services.AddDbContextService(builder).AddRepositoryService();
     }
 
+    #region Add Db Context Service
+
     private static IServiceCollection AddDbContextService(
         this IServiceCollection services,
         WebApplicationBuilder builder
@@ -27,6 +29,8 @@ public static class DependencyInjection
 
         return services;
     }
+
+    #endregion
 
     #region Add Repository Service
 
