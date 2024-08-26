@@ -61,6 +61,9 @@ public class BL_Blog
 
     #endregion
 
+    #region AddBlogAsync
+
+    #endregion
     public async Task<Result<BlogDto>> AddBlogAsync(
         BlogRequestDto blogRequest,
         CancellationToken cancellationToken
