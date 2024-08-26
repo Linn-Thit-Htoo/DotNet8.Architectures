@@ -9,6 +9,8 @@ public class BlogRepository : IBlogRepository
         _context = context;
     }
 
+    #region Get Blogs Async
+
     public async Task<Result<BlogListDtoV1>> GetBlogsAsync(
         int pageNo,
         int pageSize,
@@ -52,6 +54,8 @@ public class BlogRepository : IBlogRepository
 
         return result;
     }
+
+    #endregion
 
     public async Task<Result<BlogDto>> GetBlogByIdAsync(int id, CancellationToken cancellationToken)
     {
