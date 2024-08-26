@@ -121,6 +121,8 @@ public class BlogRepository : IBlogRepository
 
     #endregion
 
+    #region Update Blog Async
+
     public async Task<Result<BlogDto>> UpdateBlogAsync(
         BlogRequestDto requestDto,
         int id,
@@ -157,6 +159,8 @@ public class BlogRepository : IBlogRepository
     result:
         return result;
     }
+
+    #endregion
 
     public async Task<Result<BlogDto>> PatchBlogAsync(
         BlogRequestDto requestDto,
