@@ -66,6 +66,8 @@ public class BlogController : BaseController
 
     #endregion
 
+    #region Update Blog
+
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateBlog(
         [FromBody] BlogRequestDto blogRequest,
@@ -76,6 +78,8 @@ public class BlogController : BaseController
         var result = await _bL_Blog.UpdateBlogAsync(blogRequest, id, cancellationToken);
         return Content(result);
     }
+
+    #endregion
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBlog(int id, CancellationToken cancellationToken)
