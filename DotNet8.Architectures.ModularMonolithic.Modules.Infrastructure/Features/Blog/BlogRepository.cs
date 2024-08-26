@@ -162,6 +162,8 @@ public class BlogRepository : IBlogRepository
 
     #endregion
 
+    #region Patch Blog Async
+
     public async Task<Result<BlogDto>> PatchBlogAsync(
         BlogRequestDto requestDto,
         int id,
@@ -209,6 +211,8 @@ public class BlogRepository : IBlogRepository
     result:
         return result;
     }
+
+    #endregion
 
     public async Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken)
     {
