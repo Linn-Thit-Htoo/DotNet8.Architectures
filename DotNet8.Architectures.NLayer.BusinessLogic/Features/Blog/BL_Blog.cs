@@ -11,6 +11,9 @@ public class BL_Blog
         _blogValidator = blogValidator;
     }
 
+    #region Get Blogs Async
+
+    #endregion
     public async Task<Result<BlogListDto>> GetBlogsAsync(
         int pageNo,
         int pageSize,
