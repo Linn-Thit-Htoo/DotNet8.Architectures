@@ -118,6 +118,8 @@ public class BL_Blog
 
     #endregion
 
+    #region Patch Blog Async
+
     public async Task<Result<BlogDto>> PatchBlogAsync(
         BlogRequestDto requestDto,
         int id,
@@ -143,6 +145,8 @@ public class BL_Blog
     result:
         return result;
     }
+
+    #endregion
 
     public async Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken)
     {
