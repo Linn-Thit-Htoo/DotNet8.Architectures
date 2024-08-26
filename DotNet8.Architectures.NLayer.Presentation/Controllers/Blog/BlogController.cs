@@ -26,12 +26,16 @@ public class BlogController : BaseController
 
     #endregion
 
+    #region Get Blog
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetBlog(int id, CancellationToken cancellationToken)
     {
         var result = await _bL_Blog.GetBlogAsync(id, cancellationToken);
         return Content(result);
     }
+
+    #endregion
 
     [HttpPost]
     public async Task<IActionResult> CreateBlog(
