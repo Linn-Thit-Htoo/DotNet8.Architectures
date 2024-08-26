@@ -11,6 +11,8 @@ public class BlogController : BaseController
         _bL_Blog = bL_Blog;
     }
 
+    #region Get Blogs
+
     [HttpGet]
     public async Task<IActionResult> GetBlogs(
         int pageNo,
@@ -21,6 +23,8 @@ public class BlogController : BaseController
         var result = await _bL_Blog.GetBlogsAsync(pageNo, pageSize, cancellationToken);
         return Content(result);
     }
+
+    #endregion
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetBlog(int id, CancellationToken cancellationToken)
