@@ -88,7 +88,6 @@ public class BL_Blog
 
     #region Update Blog Async
 
-    #endregion
     public async Task<Result<BlogDto>> UpdateBlogAsync(
         BlogRequestDto blogRequest,
         int id,
@@ -116,6 +115,8 @@ public class BL_Blog
     result:
         return result;
     }
+
+    #endregion
 
     public async Task<Result<BlogDto>> PatchBlogAsync(
         BlogRequestDto requestDto,
