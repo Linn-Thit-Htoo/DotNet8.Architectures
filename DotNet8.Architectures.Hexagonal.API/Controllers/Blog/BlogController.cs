@@ -74,6 +74,8 @@ public class BlogController : BaseController
 
     #endregion
 
+    #region Patch Blog
+
     [HttpPatch("{id}")]
     public async Task<IActionResult> PatchBlog(
         [FromBody] BlogRequestDto requestDto,
@@ -86,6 +88,8 @@ public class BlogController : BaseController
 
         return Content(result);
     }
+
+    #endregion
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBlog(int id, CancellationToken cancellationToken)
