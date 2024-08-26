@@ -57,6 +57,8 @@ public class DA_Blog
 
     #endregion
 
+    #region Get Blog By Id Async
+
     public async Task<Result<BlogDto>> GetBlogByIdAsync(int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
@@ -90,6 +92,8 @@ public class DA_Blog
     result:
         return result;
     }
+
+    #endregion
 
     public async Task<Result<BlogDto>> AddBlogAsync(
         BlogRequestDto blogRequest,
