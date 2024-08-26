@@ -9,6 +9,9 @@ public class DA_Blog
         _context = context;
     }
 
+    #region Get Blogs Async
+
+    #endregion
     public async Task<Result<BlogListDto>> GetBlogsAsync(
         int pageNo,
         int pageSize,
