@@ -13,7 +13,6 @@ public class BL_Blog
 
     #region Get Blogs Async
 
-    #endregion
     public async Task<Result<BlogListDto>> GetBlogsAsync(
         int pageNo,
         int pageSize,
@@ -39,6 +38,8 @@ public class BL_Blog
     result:
         return result;
     }
+
+    #endregion
 
     public async Task<Result<BlogDto>> GetBlogAsync(int id, CancellationToken cancellationToken)
     {
