@@ -214,6 +214,9 @@ public class BlogRepository : IBlogRepository
 
     #endregion
 
+    #region Delete Blog Async
+
+    #endregion
     public async Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
