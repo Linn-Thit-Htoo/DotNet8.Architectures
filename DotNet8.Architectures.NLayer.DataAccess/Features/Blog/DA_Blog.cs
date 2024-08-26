@@ -201,6 +201,8 @@ public class DA_Blog
 
     #endregion
 
+    #region Delete Blog Async
+
     public async Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
@@ -229,4 +231,6 @@ public class DA_Blog
     result:
         return result;
     }
+
+    #endregion
 }
