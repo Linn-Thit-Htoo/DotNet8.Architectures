@@ -95,6 +95,8 @@ public class BlogRepository : IBlogRepository
 
     #endregion
 
+    #region Add Blog Async
+
     public async Task<Result<BlogDto>> AddBlogAsync(
         BlogRequestDto blogRequest,
         CancellationToken cancellationToken
@@ -116,6 +118,8 @@ public class BlogRepository : IBlogRepository
 
         return result;
     }
+
+    #endregion
 
     public async Task<Result<BlogDto>> UpdateBlogAsync(
         BlogRequestDto requestDto,
