@@ -57,6 +57,8 @@ public class BlogRepository : IBlogRepository
 
     #endregion
 
+    #region Get BlogBy I dAsync
+
     public async Task<Result<BlogDto>> GetBlogByIdAsync(int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
@@ -90,6 +92,8 @@ public class BlogRepository : IBlogRepository
     result:
         return result;
     }
+
+    #endregion
 
     public async Task<Result<BlogDto>> AddBlogAsync(
         BlogRequestDto blogRequest,
