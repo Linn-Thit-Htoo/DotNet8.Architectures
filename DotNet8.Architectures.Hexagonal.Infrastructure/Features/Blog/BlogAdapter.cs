@@ -159,17 +159,17 @@ public class BlogAdapter : IBlogPort
 
             if (!requestDto.BlogTitle.IsNullOrEmpty())
             {
-                blog.BlogTitle += requestDto.BlogTitle;
+                blog.BlogTitle = requestDto.BlogTitle;
             }
 
             if (!requestDto.BlogAuthor.IsNullOrEmpty())
             {
-                blog.BlogAuthor += requestDto.BlogAuthor;
+                blog.BlogAuthor = requestDto.BlogAuthor;
             }
 
             if (!requestDto.BlogContent.IsNullOrEmpty())
             {
-                blog.BlogContent += requestDto.BlogContent;
+                blog.BlogContent = requestDto.BlogContent;
             }
 
             _context.Tbl_Blogs.Update(blog);
