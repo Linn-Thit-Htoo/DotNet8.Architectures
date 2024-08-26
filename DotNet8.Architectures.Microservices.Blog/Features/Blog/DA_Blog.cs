@@ -162,6 +162,8 @@ public class DA_Blog
 
     #endregion
 
+    #region Patch Blog Async
+
     public async Task<Result<BlogDto>> PatchBlogAsync(
         BlogRequestDto requestDto,
         int id,
@@ -183,17 +185,17 @@ public class DA_Blog
 
             if (!requestDto.BlogTitle.IsNullOrEmpty())
             {
-                blog.BlogTitle += requestDto.BlogTitle;
+                blog.BlogTitle = requestDto.BlogTitle;
             }
 
             if (!requestDto.BlogAuthor.IsNullOrEmpty())
             {
-                blog.BlogAuthor += requestDto.BlogAuthor;
+                blog.BlogAuthor = requestDto.BlogAuthor;
             }
 
             if (!requestDto.BlogContent.IsNullOrEmpty())
             {
-                blog.BlogContent += requestDto.BlogContent;
+                blog.BlogContent = requestDto.BlogContent;
             }
 
             _context.Tbl_Blogs.Update(blog);
@@ -209,6 +211,10 @@ public class DA_Blog
     result:
         return result;
     }
+
+    #endregion
+
+    #region Delete Blog Async
 
     public async Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken)
     {
@@ -238,4 +244,6 @@ public class DA_Blog
     result:
         return result;
     }
+
+    #endregion
 }
