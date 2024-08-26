@@ -220,6 +220,8 @@ public class BlogRepository : IBlogRepository
 
     #endregion
 
+    #region Delete Blog Async
+
     public async Task<Result<BlogDto>> DeleteBlogAsync(int id, CancellationToken cancellationToken)
     {
         Result<BlogDto> result;
@@ -248,4 +250,6 @@ public class BlogRepository : IBlogRepository
     result:
         return result;
     }
+
+    #endregion
 }
