@@ -28,8 +28,12 @@ public static class DependencyInjection
         return services;
     }
 
+    #region Add Repository Service
+
     private static IServiceCollection AddRepositoryService(this IServiceCollection services)
     {
         return services.AddScoped<IBlogRepository, BlogRepository>();
     }
+
+    #endregion
 }
