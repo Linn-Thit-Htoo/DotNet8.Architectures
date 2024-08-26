@@ -86,6 +86,9 @@ public class BL_Blog
 
     #endregion
 
+    #region Update Blog Async
+
+    #endregion
     public async Task<Result<BlogDto>> UpdateBlogAsync(
         BlogRequestDto blogRequest,
         int id,
